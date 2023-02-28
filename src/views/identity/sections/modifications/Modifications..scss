@@ -1,0 +1,60 @@
+.content_options {
+  h3 {
+    @extend .monts_medium_16;
+    margin-bottom: 8px;
+  }
+}
+
+.content_next {
+  margin: 32px auto;
+  height: 48px;
+}
+
+.content_options:nth-child(1) {
+  .checkbox-group-wrapper {
+    @include grid($columns: repeat(5, 200px));
+
+    @include desktop-large {
+      @include grid($columns: repeat(4, 220px));
+    }
+
+    @include laptops-large {
+      @include grid($columns: repeat(4, 160px));
+    }
+
+    @include laptops {
+      @include grid($columns: repeat(3, 130px));
+    }
+
+    @include tablets {
+      @include grid($columns: repeat(1, auto));
+
+    }
+    gap: 16px;
+  }
+  margin-bottom: 24px;
+}
+
+.content_options:nth-child(2) {
+  .checkbox-group-wrapper {
+    @include grid($columns: repeat(4, 200px));
+
+    @include desktop-large {
+      @include grid($columns: repeat(4, 220px));
+    }
+
+    @include laptops-large {
+      @include grid($columns: repeat(4, 160px));
+    }
+
+    @include laptops {
+      @include grid($columns: repeat(2, 130px));
+    }
+
+    @include tablets {
+      @include grid($columns: repeat(1, auto));
+    }
+
+    gap: 16px;
+  }
+}

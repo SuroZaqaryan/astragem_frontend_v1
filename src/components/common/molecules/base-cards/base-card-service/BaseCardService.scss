@@ -1,0 +1,65 @@
+.card-image {
+  max-width: 100%;
+  display: block;
+  padding: 16px;
+  background: $white;
+  border: 1px solid $primary-light;
+  border-radius: 6px;
+  transition: 0.1s;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  &:hover {
+    outline: 2px solid $primary;
+
+    .text__title {
+      color: $primary;
+    }
+  }
+
+  &__img {
+    margin-bottom: 8px;
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &--square {
+      height: var(--image-height); // Card square image
+    }
+
+    &--rectangle {
+      height: 118px; // Card rectangle image
+    }
+  }
+
+  &__text {
+    .text__title {
+      text-align: center;
+      @extend .monts_medium_16;
+    }
+
+    .text__description {
+      text-align: center;
+      color: #232323;
+      @extend .monts_reg_12;
+    }
+  }
+}
+
+// Card square
+
+.card-image.card-image--square {
+  flex-basis: var(--card-width);
+  max-width: 100%;
+}
+
+// Card rectangle
+
+.card-image.card-image--rectangle {
+  width: 264px;
+}

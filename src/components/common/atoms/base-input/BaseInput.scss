@@ -1,0 +1,35 @@
+.base-input {
+  .base-input__text-icon {
+    // @include flexbox('center');
+    gap: 8px;
+    margin-bottom: 8px;
+
+    label {
+      @extend .montserrat_medium_base;
+    }
+  }
+  input {
+    max-width: 395px;
+    height: 48px;
+    padding: 12px;
+    background: #fafafa;
+    border: 1px solid $gray-30;
+    border-radius: 5px;
+    @extend .monts_reg_16;
+
+    &:focus {
+      border: 1px solid $primary;
+    }
+
+    &::placeholder {
+      color: #999b9e;
+      text-align: left;
+    }
+  }
+}
+
+.disabled {
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.5;
+}

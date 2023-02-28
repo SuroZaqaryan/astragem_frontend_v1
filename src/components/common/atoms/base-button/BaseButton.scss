@@ -1,0 +1,81 @@
+.base-button {
+  // @include flexbox('center');
+  max-width: 122px;
+  height: 48px;
+  gap: 8px;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  background-color: #f7f4f5;
+  transition: 0.1s;
+  color: #303132;
+  cursor: pointer;
+  @extend .monts_bold_16;
+
+  &:hover {
+    background-color: $primary-light;
+    color: $primary;
+  }
+
+  img {
+    margin-bottom: 3px;
+  }
+
+  span {
+    margin: 1px auto;
+  }
+}
+
+.disabled {
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+// Colors
+
+.base-button.primary {
+  background-color: $primary; // Priamry color
+  color: $white;
+  &:hover {
+    background-color: $primary-dark;
+  }
+}
+
+.base-button.primary-light {
+  background-color: $primary-light; // Primary light color
+  color: $primary;
+  &:hover {
+    background-color: $primary;
+    color: $white;
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
+
+.base-button.light {
+  background-color: $white; // Light color
+  color: $primary;
+  border: 1px solid $primary;
+}
+
+.base-button.active {
+  border: 2px solid $primary;
+  color: $primary;
+  background-color: $white;
+}
+
+// Icon position
+
+.base-button.icon-left {
+  flex-direction: row-reverse;
+}
+
+.base-button.right {
+  flex-direction: row;
+}
+
+.base-button.full-width {
+  width: 100%;
+}

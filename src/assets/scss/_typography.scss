@@ -1,0 +1,127 @@
+// Here we will create our major fonts styles
+
+// Montserrat Regular 400
+
+.montserrat_regular_base {
+  font-family: "Montserrat Regular";
+}
+
+.monts_reg_12 {
+  @extend .montserrat_regular_base;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.monts_reg_14 {
+  @extend .montserrat_regular_base;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.monts_reg_16 {
+  @extend .montserrat_regular_base;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.monts_reg_20 {
+  @extend .montserrat_regular_base;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+// Montserrat Medium 500
+
+.montserrat_medium_base {
+  font-family: "Montserrat Medium";
+}
+
+.monts_medium_12 {
+  @extend .montserrat_medium_base;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.monts_medium_14 {
+  @extend .montserrat_medium_base;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.monts_medium_16 {
+  @extend .montserrat_medium_base;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.monts_medium_20 {
+  @extend .montserrat_medium_base;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+// Montserrat SemiBold
+
+.montserrat_semi_bold_base {
+  font-family: "Montserrat SemiBold";
+}
+
+.monts_semibold_12 {
+  @extend .montserrat_semi_bold_base;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.monts_semibold_14 {
+  @extend .montserrat_semi_bold_base;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.monts_semibold_16 {
+  @extend .montserrat_semi_bold_base;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.monts_semibold_20 {
+  @extend .montserrat_semi_bold_base;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.monts_semibold_24 {
+  @extend .montserrat_semi_bold_base;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+// Montserrat Bold 700
+
+.montserrat_bold_base {
+  font-family: "Montserrat Bold";
+}
+
+.monts_bold_12 {
+  @extend .montserrat_bold_base;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.monts_bold_14 {
+  @extend .montserrat_bold_base;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.monts_bold_16 {
+  @extend .montserrat_bold_base;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.monts_bold_20 {
+  @extend .montserrat_bold_base;
+  font-size: 20px;
+  line-height: 30px;
+}

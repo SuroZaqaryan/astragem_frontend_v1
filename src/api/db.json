@@ -1,0 +1,701 @@
+{
+  "general-body": [
+    {
+      "title": "Inverted triangle",
+      "description": "",
+      "value": "inverted_triangle",
+      "image": "identity-images/general-body/inverted-triangle.png"
+    },
+    {
+      "title": "Triangle",
+      "description": "",
+      "value": "triangle",
+      "image": "identity-images/general-body/triangle.png"
+    },
+    {
+      "title": "Diamond",
+      "description": "",
+      "value": "diamon",
+      "image": "identity-images/general-body/diamond.png"
+    },
+    {
+      "title": "Equal",
+      "description": "",
+      "value": "equal",
+      "image": "identity-images/general-body/equal.png",
+      "defined": [
+        {
+          "title": "Yes",
+          "description": "Hourglass",
+          "value": "yes",
+          "image": "identity-images/general-body/inverted-triangle.png",
+          "full_bust": [
+            {
+              "title": "Yes",
+              "description": "Round",
+              "value": "Round",
+              "image": "identity-images/general-body/round.png"
+            },
+            {
+              "title": "No",
+              "description": "Rectangle",
+              "value": "No",
+              "image": "identity-images/general-body/equal.png"
+            }
+          ]
+        },
+        {
+          "title": "No",
+          "description": "",
+          "value": false,
+          "image": "identity-images/general-body/diamond.png"
+        }
+      ]
+    }
+  ],
+  "frame": [
+    {
+      "title": "Petite",
+      "description": "(delicate frame)",
+      "value": "petite",
+      "image": "identity-images/body-frame/amazonian.png"
+    },
+    {
+      "title": "Amazonian",
+      "description": "(Muscular frame)",
+      "value": "amazonian",
+      "image": "identity-images/body-frame/athletic.png"
+    },
+    {
+      "title": "Voluptuous",
+      "description": "(Plus size frame)",
+      "value": "voluptuous",
+      "image": "identity-images/body-frame/petite.png"
+    },
+    {
+      "title": "Slender",
+      "description": "(Lean Frame)",
+      "value": "slender",
+      "image": "identity-images/body-frame/slender.png"
+    },
+    {
+      "title": "Athletic",
+      "description": "(Sporty frame)",
+      "value": "athletic",
+      "image": "identity-images/body-frame/voluptuous.png"
+    }
+  ],
+  "body-height": [
+    {
+      "title": "Short",
+      "value": "short",
+      "image": "identity-images/body-height/short-height.png"
+    },
+    {
+      "title": "Average",
+      "value": "average",
+      "image": "identity-images/body-height/average-height.png"
+    },
+    {
+      "title": "Tall",
+      "value": "tall",
+      "image": "identity-images/body-height/tall-height.png"
+    }
+  ],
+  "breast-shape": [
+    {
+      "title": "Athletic",
+      "description": "Wider, more muscular breasts with less tissue",
+      "value": "athletic",
+      "image": "identity-images/breast-shape/athletic.png"
+    },
+    {
+      "title": "Bell",
+      "description": "Slimmer at the top fuller at the bottom",
+      "value": "bell",
+      "image": "identity-images/breast-shape/bell.png"
+    },
+    {
+      "title": "East West",
+      "description": "Slimmer at the top fuller at the bottom",
+      "value": "east_west",
+      "image": "identity-images/breast-shape/east-west.png"
+    },
+    {
+      "title": "Relaxed",
+      "description": "Slimmer at the top fuller at the bottom",
+      "value": "relaxed",
+      "image": "identity-images/breast-shape/relaxed.png"
+    },
+    {
+      "title": "Round",
+      "description": "Equally full at the top and bottom",
+      "value": "round",
+      "image": "identity-images/breast-shape/round.png"
+    },
+    {
+      "title": "Side Set",
+      "description": "Equally full at the top and bottom",
+      "value": "side_set",
+      "image": "identity-images/breast-shape/side-set.png"
+    },
+    {
+      "title": "Slender",
+      "description": "Thinner and nipples point slightly downward.",
+      "value": "slender",
+      "image": "identity-images/breast-shape/slender.png"
+    },
+    {
+      "title": "Teardrop",
+      "description": "Round and slightly less full at the top",
+      "value": "teardrop",
+      "image": "identity-images/breast-shape/teardrop.png"
+    },
+    {
+      "title": "Other",
+      "description": "Round and slightly less full at the top",
+      "value": "other",
+      "image": "identity-images/breast-shape/other.png"
+    }
+  ],
+  "breast-size": [
+    {
+      "title": "A",
+      "value": "a",
+      "image": "identity-images/breast-size/a.png"
+    },
+    {
+      "title": "B",
+      "value": "b",
+      "image": "identity-images/breast-size/b.png"
+    },
+    {
+      "title": "C",
+      "value": "c",
+      "image": "identity-images/breast-size/c.png"
+    },
+    {
+      "title": "D",
+      "value": "d",
+      "image": "identity-images/breast-size/d.png"
+    },
+    {
+      "title": "E",
+      "value": "e",
+      "image": "identity-images/breast-size/e.png"
+    },
+    {
+      "title": "F",
+      "value": "f",
+      "image": "identity-images/breast-size/f.png"
+    }
+  ],
+  "nippie-variation": [
+    {
+      "title": "Small Nipples",
+      "description": "Wider, more muscular breasts with less tissue",
+      "value": "small",
+      "image": "identity-images/breast-shape/athletic.png"
+    },
+    {
+      "title": "Pencil Eraser Nipples",
+      "description": "Slimmer at the top fuller at the bottom",
+      "value": "pencill_eraser",
+      "image": "identity-images/breast-shape/bell.png"
+    },
+    {
+      "title": "Flat Nipple",
+      "description": "Nipples point outward, in opposite directions.",
+      "value": "flat",
+      "image": "identity-images/breast-shape/east-west.png"
+    },
+    {
+      "title": "Inverted Nipple",
+      "description": "Softer tissue and nipples point slightly downward",
+      "value": "inverted",
+      "image": "identity-images/breast-shape/relaxed.png"
+    },
+    {
+      "title": "Milky Nipple",
+      "description": "Softer tissue and nipples point slightly downward",
+      "value": "milky",
+      "image": "identity-images/breast-shape/round.png"
+    },
+    {
+      "title": "Cone Shaped Nipples",
+      "description": "Equally full at the top and bottom",
+      "value": "cone_shaped",
+      "image": "identity-images/breast-shape/side-set.png"
+    },
+    {
+      "title": "Side Long Nipples",
+      "description": "Equally full at the top and bottom",
+      "value": "side_long",
+      "image": "identity-images/breast-shape/slender.png"
+    },
+    {
+      "title": "Big Areolas Nipples",
+      "description": "Equally full at the top and bottom",
+      "value": "big_areolas",
+      "image": "identity-images/breast-shape/teardrop.png"
+    },
+    {
+      "title": "Bumpy",
+      "description": "Equally full at the top and bottom",
+      "value": "bumpy",
+      "image": "identity-images/breast-shape/other.png"
+    },
+    {
+      "title": "Puffy",
+      "description": "Equally full at the top and bottom",
+      "value": "puffy",
+      "image": "identity-images/breast-shape/other.png"
+    }
+  ],
+  "butt-shape": [
+    {
+      "title": "“S” shaped butt",
+      "value": 1,
+      "image": "identity-images/butt-shape/butt-shape.png",
+      "icon": "identity-images/butt-shape/butt-shape-icon.svg"
+    },
+    {
+      "title": "“H” shaped butt",
+      "value": 2,
+      "image": "identity-images/butt-shape/butt-shape.png",
+      "icon": "identity-images/butt-shape/butt-shape-icon.svg"
+    },
+    {
+      "title": "“S” shaped butt",
+      "value": 3,
+      "image": "identity-images/butt-shape/butt-shape.png",
+      "icon": "identity-images/butt-shape/butt-shape-icon.svg"
+    },
+    {
+      "title": "“S” shaped butt",
+      "value": 4,
+      "image": "identity-images/butt-shape/butt-shape.png",
+      "icon": "identity-images/butt-shape/butt-shape-icon.svg"
+    },
+    {
+      "title": "“S” shaped butt",
+      "value": 5,
+      "image": "identity-images/butt-shape/butt-shape.png",
+      "icon": "identity-images/butt-shape/butt-shape-icon.svg"
+    }
+  ],
+  "pussy-type": [
+    {
+      "title": "Ms. Peachy",
+      "value": "peachy",
+      "image": "identity-images/pussy-type/ms-peachy.png"
+    },
+    {
+      "title": "Ms. Puffy",
+      "value": "puffy",
+      "image": "identity-images/pussy-type/ms-puffy.png"
+    },
+    {
+      "title": "Ms. Flowery",
+      "value": "flowery",
+      "image": "identity-images/pussy-type/ms-flowery.png"
+    }
+  ],
+  "grooming-style": [
+    {
+      "title": "Bermuda Triangle",
+      "value": "bermuda_triangle",
+      "image": "identity-images/grooming-style/bermuda-triangle.png"
+    },
+    {
+      "title": "The Flame",
+      "value": "flame",
+      "image": "identity-images/grooming-style/flame.png"
+    },
+    {
+      "title": "Short STamp",
+      "value": "short_stamp",
+      "image": "identity-images/grooming-style/short-stamp.png"
+    },
+    {
+      "title": "Postage Stamp",
+      "value": "postage_stamp",
+      "image": "identity-images/grooming-style/postage-stamp.png"
+    },
+    {
+      "title": "Heart",
+      "value": "heart",
+      "image": "identity-images/grooming-style/heart.png"
+    },
+    {
+      "title": "V for Vendetta",
+      "value": "vendetta",
+      "image": "identity-images/grooming-style/vendetta.png"
+    },
+    {
+      "title": "CGT Cap",
+      "value": "cgt-cap",
+      "image": "identity-images/grooming-style/cgt-cap.png"
+    },
+    {
+      "title": "Bonsai",
+      "value": "bonsai",
+      "image": "identity-images/grooming-style/bonsai.png"
+    },
+    {
+      "title": "Round Bottom",
+      "value": "round_bottom",
+      "image": "identity-images/grooming-style/round-bottom.png"
+    },
+    {
+      "title": "Spider",
+      "value": "spider",
+      "image": "identity-images/grooming-style/spider.png"
+    },
+    {
+      "title": "Short Bikini",
+      "value": "short_bikini",
+      "image": "identity-images/grooming-style/short-bikini.png"
+    },
+    {
+      "title": "Full Bush",
+      "value": "full_bush",
+      "image": "identity-images/grooming-style/full-bush.png"
+    },
+    {
+      "title": "Lamp Strip",
+      "value": "lamp_strip",
+      "image": "identity-images/grooming-style/lamp-strip.png"
+    },
+    {
+      "title": "Muffy Bottom",
+      "value": "muffy_bottom",
+      "image": "identity-images/grooming-style/muffy-bottom.png"
+    },
+    {
+      "title": "Brazilian",
+      "value": "brazilian",
+      "image": "identity-images/grooming-style/brazilian.png"
+    },
+    {
+      "title": "Eye of the Tiger",
+      "value": "eye_tiger",
+      "image": "identity-images/grooming-style/eye-tiger.png"
+    },
+    {
+      "title": "Square",
+      "value": "square",
+      "image": "identity-images/grooming-style/square.png"
+    },
+    {
+      "title": "Monhawk",
+      "value": "monhawk",
+      "image": "identity-images/grooming-style/monhawk.png"
+    }
+  ],
+  "body-enhancements": [
+    {
+      "title": "Buns",
+      "value": "buns",
+      "image": "identity-images/enhancements/buns.png"
+    },
+    {
+      "title": "Lips",
+      "value": "lips",
+      "image": "identity-images/enhancements/lips.png"
+    },
+    {
+      "title": "Petals",
+      "value": "petals",
+      "image": "identity-images/enhancements/petals.png"
+    },
+    {
+      "title": "Breasts",
+      "value": "breasts",
+      "image": "identity-images/enhancements/breasts.png"
+    }
+  ],
+  "modifications": {
+    "tattoos": [
+      {
+        "label": "Face",
+        "value": "face"
+      },
+      {
+        "label": "Upper Arm",
+        "value": "upper_arm"
+      },
+      {
+        "label": "Buttocks",
+        "value": "buttocks"
+      },
+      {
+        "label": "Inner Lip",
+        "value": "inner_lip"
+      },
+      {
+        "label": "Rib Cage",
+        "value": "rib_cage"
+      },
+      {
+        "label": "Hand",
+        "value": "hand"
+      },
+      {
+        "label": "NeckNeck",
+        "value": "neck_neck"
+      },
+      {
+        "label": "Lower Back",
+        "value": "lower_back"
+      },
+      {
+        "label": "Upper Leg",
+        "value": "upper_leg"
+      },
+      {
+        "label": "Shoulder",
+        "value": "shoulder"
+      },
+      {
+        "label": "Abdomen",
+        "value": "abdomen"
+      },
+      {
+        "label": "Lower Leg",
+        "value": "lower_leg"
+      },
+      {
+        "label": "Upper Back",
+        "value": "upper_back"
+      },
+      {
+        "label": "Hip",
+        "value": "hip"
+      },
+      {
+        "label": "Ankie",
+        "value": "ankie"
+      }
+    ],
+    "piercing": [
+      {
+        "label": "Naval",
+        "value": "naval"
+      },
+      {
+        "label": "Genitals",
+        "value": "genitals"
+      },
+      {
+        "label": "Nose",
+        "value": "nose"
+      },
+      {
+        "label": "Rib Cage",
+        "value": "rib_cage"
+      },
+      {
+        "label": "Ear (other thankbie)",
+        "value": "ear"
+      },
+      {
+        "label": "Tongue",
+        "value": "tongue"
+      },
+      {
+        "label": "Nipple",
+        "value": "nipple"
+      },
+      {
+        "label": "Lip",
+        "value": "lip"
+      }
+    ]
+  },
+  "hair-length": [
+    {
+      "title": "Bald",
+      "description": "0”",
+      "value": "0"
+    },
+    {
+      "title": "Ear of length",
+      "description": "6”",
+      "value": "6"
+    },
+    {
+      "title": "Below the Ear",
+      "description": "8”",
+      "value": "8"
+    },
+    {
+      "title": "Chin Lenght",
+      "description": "10”",
+      "value": "10"
+    },
+    {
+      "title": "Shoukders",
+      "description": "12”",
+      "value": "12"
+    },
+    {
+      "title": "Upper Back",
+      "description": "14”",
+      "value": "14"
+    },
+    {
+      "title": "Bra Strap",
+      "description": "16”",
+      "value": "16"
+    },
+    {
+      "title": "Shoulder Blades",
+      "description": "18”",
+      "value": "18"
+    },
+    {
+      "title": "Mid Back",
+      "description": "20”-22”",
+      "value": "20_22"
+    },
+    {
+      "title": "Lower Back",
+      "description": "24”-26”",
+      "value": "24_26"
+    },
+    {
+      "title": "Waist",
+      "description": "28”",
+      "value": "28"
+    },
+    {
+      "title": "Hips",
+      "description": "30”",
+      "value": "30"
+    }
+  ],
+  "hair-type": [
+    {
+      "title": "Straight",
+      "value": "straight",
+      "image": "identity-images/hair-type/straight.png"
+    },
+    {
+      "title": "Curly",
+      "value": "curly",
+      "image": "identity-images/hair-type/curly.png"
+    },
+    {
+      "title": "Wavy",
+      "value": "wavy",
+      "image": "identity-images/hair-type/wavy.png"
+    },
+    {
+      "title": "Coily",
+      "value": "coily",
+      "image": "identity-images/hair-type/coily.png"
+    }
+  ],
+  "hair-color": [
+    {
+      "title": "Blonde",
+      "value": "blonde",
+      "image": "identity-images/hair-type/straight.png",
+      "color": "#FFBD05"
+    },
+    {
+      "title": "Strawberry Blonde",
+      "value": "strawberry",
+      "image": "identity-images/hair-type/curly.png",
+      "color": "#F1801B"
+    },
+    {
+      "title": "Auburn",
+      "value": "auburn",
+      "image": "identity-images/hair-type/wavy.png",
+      "color": "#7D2812"
+    },
+    {
+      "title": "Brown",
+      "value": "brown",
+      "image": "identity-images/hair-type/coily.png",
+      "color": "#71584C"
+    },
+    {
+      "title": "Dark Brown",
+      "value": "dark_brown",
+      "image": "identity-images/hair-type/straight.png",
+      "color": "#41261F"
+    },
+    {
+      "title": "Black",
+      "value": "black",
+      "image": "identity-images/hair-type/curly.png",
+      "color": "#030708"
+    },
+    {
+      "title": "Salt and Pepper",
+      "value": "salt_pepper",
+      "image": "identity-images/hair-type/wavy.png",
+      "color": "#424242"
+    },
+    {
+      "title": "Grey",
+      "value": "grey",
+      "image": "identity-images/hair-type/coily.png",
+      "color": "#9CA1A0"
+    },
+    {
+      "title": "Colorful",
+      "value": "colorful",
+      "image": "identity-images/hair-type/coily.png",
+      "color": "colorful"
+    }
+  ],
+  "eye-color": [
+    {
+      "title": "Brown",
+      "value": "brown",
+      "image": "identity-images/eye-color/eye-brown.png",
+      "color": "#928057"
+    },
+    {
+      "title": "Hazel",
+      "value": "hazel",
+      "image": "identity-images/eye-color/eye-hazel.png",
+      "color": "#C5A83B"
+    },
+    {
+      "title": "Blue",
+      "value": "blue",
+      "image": "identity-images/eye-color/eye-blue.png",
+      "color": "#8EC9C4"
+    },
+    {
+      "title": "Green",
+      "value": "green",
+      "image": "identity-images/eye-color/eye-green.png",
+      "color": "#95BA51"
+    },
+    {
+      "title": "Grey",
+      "value": "grey",
+      "image": "identity-images/eye-color/eye-grey.png",
+      "color": "#A6BABC"
+    },
+    {
+      "title": "Amber",
+      "value": "amber",
+      "image": "identity-images/eye-color/eye-amber.png",
+      "color": "#CA7C2C"
+    },
+    {
+      "title": "Dark Brown",
+      "value": "dark_brown",
+      "image": "identity-images/eye-color/eye-dark-brown.png",
+      "color": "#3E3725"
+    }
+  ],
+  "posts": []
+}

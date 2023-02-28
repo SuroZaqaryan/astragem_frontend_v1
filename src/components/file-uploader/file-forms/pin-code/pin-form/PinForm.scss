@@ -1,0 +1,28 @@
+.pincode-form {
+  position: absolute;
+  max-width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+
+  &__text {
+    text-align: center;
+    color: $white;
+    @extend .monts_reg_14;
+  }
+
+  &__field {
+    margin: 16px 0 20px 0;
+
+    > div {
+      gap: 8px;
+      justify-content: center;
+    }
+  }
+
+  .file-preview__pin-code__save {
+    button {
+      width: 100%;
+    }
+  }
+}

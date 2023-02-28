@@ -1,0 +1,27 @@
+.content_options {
+  // @include flexbox('center', 'center');
+  gap: 16px;
+
+  @include laptops {
+    flex-wrap: wrap;
+  }
+
+  label {
+    display: flex;
+    cursor: pointer;
+    border-radius: 4px;
+
+    img {
+      min-width: 100px;
+      height: 100%;
+    }
+
+    &:hover {
+      outline: 2px solid $primary;
+    }
+  }
+
+  input[type='radio'] {
+    display: none;
+  }
+}

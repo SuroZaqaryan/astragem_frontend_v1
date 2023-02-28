@@ -1,0 +1,8 @@
+@import './reset'; // general styles
+@import './fonts'; // fonts
+@import './colors'; // colors
+@import './typography'; // typography
+
+@import './mixins/flexbox-mixin'; // flexbox mixin
+@import './mixins/media-mixin'; // media mixin
+@import './mixins/grid-mixin'; // grid mixin

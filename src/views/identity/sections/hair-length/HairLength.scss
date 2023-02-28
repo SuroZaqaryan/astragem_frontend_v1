@@ -1,0 +1,38 @@
+.content_options {
+  // @include flexbox('', 'center');
+
+  &__variants {
+    // @include flexbox('', '', '', 'column');
+    margin-right: 16px;
+
+    .content_options__item {
+      display: grid;
+    }
+
+    label {
+      width: 235px;
+      max-width: 100%;
+      padding: 8px 16px;
+      background: $white;
+      border: 1px solid #f2dedf;
+      border-radius: 6px;
+      // @include flexbox('center', 'space-between');
+      @extend .monts_medium_16;
+      cursor: pointer;
+
+      input[type='radio'] {
+        display: none;
+      }
+      &:hover {
+        outline: 2px solid $primary;
+      }
+    }
+  }
+
+  &__image {
+    img {
+      max-width: 350px;
+      height: 100%;
+    }
+  }
+}

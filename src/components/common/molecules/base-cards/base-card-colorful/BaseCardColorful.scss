@@ -1,0 +1,83 @@
+.card-colorful {
+  display: grid;
+  margin: auto;
+  grid-gap: 10px;
+  grid-auto-rows: 225px;
+
+  @include grid(
+    null,
+    repeat(auto-fit, minmax(100px, var(--card-width))),
+    $gap: 16px,
+    $justify-content: center
+  );
+
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+
+  .card-hair-color {
+    position: relative;
+    max-width: 100%;
+    display: block;
+    padding: 16px;
+    background: $white;
+    border: 1px solid $primary-light;
+    border-radius: 6px;
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+
+    &__info {
+      margin-bottom: 8px;
+      text-align: center;
+
+      &-indicator {
+        width: 24px;
+        height: 24px;
+        margin: auto;
+        border-radius: 100%;
+      }
+
+      &-title {
+        margin-top: 4px;
+        @extend .monts_medium_16;
+      }
+    }
+
+    &__image {
+      // @include flexbox('', 'center');
+
+      img {
+        max-width: 100%;
+        width: 104px;
+        height: 133px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // Active color
+
+  .card-hair-color.card-hair-color--colorful:before {
+    content: '';
+    width: 98%;
+    height: 98%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 6px; /*1*/
+    border: 2px solid transparent; /*2*/
+    background: linear-gradient(45deg, red, blue, orange, yellow, aqua, purple)
+      border-box; /*3*/
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; /*5'*/
+    mask-composite: exclude; /*5*/
+  }
+
+  .card-hair-color.card-hair-color--colorful {
+    border-color: transparent;
+  }
+}

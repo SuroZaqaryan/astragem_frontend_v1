@@ -1,0 +1,48 @@
+.sidebar {
+  flex-basis: 280px;
+  min-width: 280px;
+  margin-right: 32px;
+  padding: 8px 0;
+  background: #fafafa;
+  border: 1px solid #f2dedf;
+
+  border-radius: 6px;
+
+  .sidebar__link.router-link-active {
+    border-top: 1px solid $primary;
+    border-bottom: 1px solid $primary;
+    color: $primary;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 16px;
+      width: 20px;
+      height: 20px;
+      background-image: url(../../assets/icons/repeat/arrow-right-colorful.svg);
+    }
+  }
+
+  .disabled {
+    background-color: #fafafa;
+    cursor: context-menu;
+    pointer-events: none;
+    user-select: none;
+    border-top: 1px solid #f2dedf !important;
+    color: #999b9e;
+    @extend .monts_reg_16;
+  }
+
+  &__link {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding: 16px;
+    @extend .monts_semibold_16;
+    background-color: $white;
+    color: #303132;
+    border: 1px solid #fafafa;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+}

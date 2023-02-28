@@ -1,0 +1,74 @@
+.collapse {
+  --mb-header: 16px;
+  &-header {
+    width: 100%;
+    position: relative;
+    padding: 8px 0;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: red;
+    user-select: none;
+    transform-origin: center;
+    margin-bottom: var(--mb-header);
+    cursor: pointer;
+    transition: height 0.2s ease;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      background: black;
+      border-radius: 50px;
+      transition: 0.2s ease;
+    }
+    &:before {
+      width: 2px;
+      height: 12px;
+      top: calc(50% - 6px);
+      right: 16px;
+    }
+    &:after {
+      width: 12px;
+      height: 2px;
+      top: calc(50% - 1px);
+      right: 11px;
+    }
+    &.open {
+      &:before {
+        transform: rotate(90deg);
+      }
+    }
+    &_arrow {
+      &:before {
+        height: 6px;
+        right: 9px;
+        transform: rotate(-45deg);
+      }
+      &:after {
+        width: 6px;
+        top: calc(50% - 2px);
+        right: 4px;
+        transform: rotate(-45deg);
+      }
+      &.open {
+        &::before {
+          transform: rotate(-135deg);
+        }
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+    &_light-border {
+      border-color: rgba(black, 0.1);
+    }
+  }
+  &-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    &.open {
+      max-height: 100%;
+      transition: max-height 0.8s ease;
+    }
+  }
+}

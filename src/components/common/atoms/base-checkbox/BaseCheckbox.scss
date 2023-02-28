@@ -1,0 +1,62 @@
+.base-checkbox {
+  font-size: 14px;
+  // @include flexbox('center');
+  gap: 8px;
+  user-select: none;
+  @extend .monts_reg_14;
+  cursor: pointer;
+
+  input[type='checkbox'] {
+    display: grid;
+    place-content: center;
+    appearance: none;
+    background-color: $white;
+    margin: 0;
+    color: currentColor;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $gray;
+    border-radius: 4px;
+    font: inherit;
+    cursor: pointer;
+
+    span {
+      transition: text-shadow 0.3s;
+    }
+
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      transform: scale(0);
+      transition: 45ms transform ease-in-out;
+      background-color: $primary;
+    }
+
+    &:hover {
+      border: 1px solid $gray-50;
+    }
+
+    &:checked {
+      border: 1px solid $primary;
+
+      + span {
+        text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
+      }
+
+      &:hover {
+        border: 1px solid $primary;
+      }
+    }
+
+    &:checked::before {
+      transform: scale(1);
+    }
+  }
+}
+
+.disabled {
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.5;
+}

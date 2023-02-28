@@ -1,0 +1,69 @@
+.card-icon {
+  display: block;
+  background: $white;
+  border: 1px solid $primary-light;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    outline: 2px solid $primary;
+
+    .card-icon__info {
+      background-color: $primary;
+      outline: 2px solid #cc003d;
+      border-bottom-right-radius: 3px;
+      border-bottom-left-radius: 3px;
+
+      .card-icon__icon {
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+
+      .card-icon__title,
+      .card-icon__description {
+        color: $white;
+      }
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  &__info {
+    background-color: $gray-20;
+    padding: 8px 16px 16px 16px;
+  }
+
+  &__img {
+    padding: 16px;
+
+    img {
+      width: 100%;
+      height: 136px;
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+    .card-icon__icon {
+      // @include flexbox('', 'center');
+      margin: 8px 0 4px 0;
+    }
+
+    .card-icon__text {
+      .card-icon__title {
+        text-align: center;
+        font-family: 'Montserrat Medium';
+        font-size: 15px;
+        line-height: 24px;
+      }
+
+      .card-icon__description {
+        text-align: center;
+        @extend .monts_reg_12;
+      }
+    }
+  }
+}

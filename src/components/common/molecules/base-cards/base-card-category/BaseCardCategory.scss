@@ -1,0 +1,52 @@
+.card-category {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  padding: 16px;
+  border-radius: 6px;
+  background-color: $white;
+  border: 1px solid $primary-light;
+
+  input[type='radio'] {
+    display: none;
+  }
+
+  &__info {
+    // @include flexbox('center', 'space-between');
+    max-width: 100%;
+    margin-bottom: 12px;
+
+    &-block {
+      @extend .card-category__info;
+      margin: 0;
+      gap: 8px;
+
+      .card-category__info-title {
+        @extend .monts_semibold_16;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .card-category__description {
+    p {
+      @extend .monts_reg_12;
+    }
+  }
+}
+
+.card-category.card-category--active {
+  outline: 2px solid $primary;
+}
+
+.disabled {
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.5;
+
+  .card-category__info-indicator {
+    filter: grayscale(100%);
+  }
+}

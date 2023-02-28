@@ -1,0 +1,8 @@
+.content_options {
+  @include grid(
+    null,
+    repeat(auto-fit, minmax(100px, 193px)),
+    $gap: 16px,
+    $justify-content: center
+  );
+}
