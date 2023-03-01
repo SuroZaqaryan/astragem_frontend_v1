@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia';
-import { useRoute } from 'vue-router';
-import axios from 'axios';
+import { defineStore } from "pinia";
+import { useRoute } from "vue-router";
+import axios from "axios";
 
-export const useSideBar = defineStore('sidebar', {
+export const useSideBar = defineStore("sidebar", {
   state: () => {
     return {
       currentIndex: 0,
@@ -11,79 +11,79 @@ export const useSideBar = defineStore('sidebar', {
 
       sideBarItems: [
         {
-          title: 'Find Your Body',
+          title: "Find Your Body",
           link: `general-body`,
-          icon: 'online_courses.svg',
+          icon: "online_courses.svg",
         },
         {
-          title: 'Find Your Frame',
+          title: "Find Your Frame",
           link: `body-frame`,
-          icon: 'saved-products.svg',
+          icon: "saved-products.svg",
         },
         {
-          title: 'Find your height',
+          title: "Find your height",
           link: `body-height`,
-          icon: 'certificate.svg',
+          icon: "certificate.svg",
         },
         {
-          title: 'Find Your Breast Shape',
+          title: "Find Your Breast Shape",
           link: `breast-shape`,
-          icon: 'online_courses.svg',
+          icon: "online_courses.svg",
         },
         {
-          title: 'Find Your Breast Size',
+          title: "Find Your Breast Size",
           link: `breast-size`,
-          icon: 'saved-products.svg',
+          icon: "saved-products.svg",
         },
         {
-          title: 'Find Nipple Variation',
+          title: "Find Nipple Variation",
           link: `nippie-variation`,
-          icon: 'certificate.svg',
+          icon: "certificate.svg",
         },
         {
-          title: 'Find Your Butt Shape',
+          title: "Find Your Butt Shape",
           link: `butt-shape`,
-          icon: 'online_courses.svg',
+          icon: "online_courses.svg",
         },
         {
-          title: 'Find Your Pussy Type',
+          title: "Find Your Pussy Type",
           link: `pussy-type`,
-          icon: 'saved-products.svg',
+          icon: "saved-products.svg",
         },
         {
-          title: 'Find Grooming Style',
+          title: "Find Grooming Style",
           link: `grooming-style`,
-          icon: 'certificate.svg',
+          icon: "certificate.svg",
         },
         {
-          title: 'Body Enhancements',
+          title: "Body Enhancements",
           link: `enhancements`,
-          icon: 'online_courses.svg',
+          icon: "online_courses.svg",
         },
         {
-          title: 'Body Modifications',
+          title: "Body Modifications",
           link: `modifications`,
-          icon: 'saved-products.svg',
+          icon: "saved-products.svg",
         },
         {
-          title: 'Hair Lenght',
+          title: "Hair Lenght",
           link: `hair-length`,
-          icon: 'certificate.svg',
+          icon: "certificate.svg",
         },
         {
-          title: 'Hair Type',
+          title: "Hair Type",
           link: `hair-type`,
-          icon: 'online_courses.svg',
+          icon: "online_courses.svg",
         },
         {
-          title: 'Hair Color',
+          title: "Hair Color",
           link: `hair-color`,
-          icon: 'saved-products.svg',
+          icon: "saved-products.svg",
         },
         {
-          title: 'Eye Color',
+          title: "Eye Color",
           link: `eye-color`,
-          icon: 'certificate.svg',
+          icon: "certificate.svg",
         },
       ],
     };
@@ -109,11 +109,11 @@ export const useSideBar = defineStore('sidebar', {
         // When the user selects all options
         // We successfully send the selected options to the server.
         const res = await axios.post(
-          'http://localhost:5000/posts',
+          "http://localhost:5000/posts",
           this.sideBarItemsValues
         );
 
-        if (res.status === 200) alert('Complete');
+        if (res.status === 200) alert("Complete");
       }
     },
   },
@@ -137,7 +137,7 @@ export const useSideBar = defineStore('sidebar', {
     strategies: [
       {
         storage: sessionStorage,
-        paths: ['sideBarItemsValues', 'currentIndex'],
+        paths: ["sideBarItemsValues", "currentIndex"],
       },
     ],
   },
