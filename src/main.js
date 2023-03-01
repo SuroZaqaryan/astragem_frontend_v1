@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import { VueQueryPlugin } from 'vue-query';
+import { VueQueryPlugin } from "@tanstack/vue-query";
 import router from './router';
 import { pinia } from './stores';
 import App from './App.vue';
