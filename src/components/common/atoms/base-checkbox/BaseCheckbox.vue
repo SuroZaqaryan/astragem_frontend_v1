@@ -1,5 +1,5 @@
 <script setup>
-import { computed, defineEmits } from "vue";
+import { computed } from "vue";
 
 const props = defineProps({
   id: {
@@ -56,7 +56,7 @@ const model = computed({
   <label :class="['base-checkbox', { disabled: disabled }]">
     <input :id="id" v-model="model" :value="value" type="checkbox" />
     <slot
-    ><span>{{ label }}</span></slot
+      ><span>{{ label }}</span></slot
     >
   </label>
 </template>

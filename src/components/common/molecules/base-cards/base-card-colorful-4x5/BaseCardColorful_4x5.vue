@@ -1,7 +1,7 @@
 <!-- This component automatically creates a 4 by 5 grid -->
 
 <script setup>
-import { ref, computed, defineEmits } from "vue";
+import { ref, computed } from "vue";
 
 const props = defineProps({
   options: {

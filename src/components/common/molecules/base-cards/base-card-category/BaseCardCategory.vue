@@ -1,5 +1,5 @@
 <script setup>
-import { computed, defineEmits } from "vue";
+import { computed } from "vue";
 import BaseIcon from "@/components/common/atoms/base-icon/BaseIcon.vue";
 
 const props = defineProps({

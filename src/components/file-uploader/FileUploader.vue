@@ -29,7 +29,9 @@ const props = defineProps({
 
 function onInputFileChange(e) {
   addFiles(e.target.files);
-  e.target.value = null; // reset so that selecting the same file again will still cause it to fire this change
+
+  // Reset so that selecting the same file again will still cause it to fire this change
+  e.target.value = null;
 }
 </script>
 

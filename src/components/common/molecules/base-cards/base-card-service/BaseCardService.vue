@@ -1,61 +1,51 @@
 <script setup>
-import { ref, computed, defineEmits, defineProps } from 'vue'
+import { ref, computed } from "vue";
 
 const props = defineProps({
   options: {
     required: true,
-    type: Array
+    type: Array,
   },
 
   modelValue: {
     type: [Number, String],
     required: false,
-    default: ''
+    default: "",
   },
 
   type: {
     type: String,
     required: false,
-    default: ''
+    default: "",
   },
 
   cardWidth: {
     type: String,
     required: false,
-    default: '238'
+    default: "238",
   },
 
   cardImageHeight: {
     type: String,
     required: false,
-    default: '238'
-  }
-})
+    default: "238",
+  },
+});
 
-const options = ref([...props.options])
+const options = ref([...props.options]);
 
-const emit = defineEmits(['update:modelValue', 'change'])
+const emit = defineEmits(["update:modelValue", "change"]);
 
 const model = computed({
-  get () {
-    return props.modelValue
+  get() {
+    return props.modelValue;
   },
 
-  set (value) {
-    emit('update:modelValue', value)
-    emit('change', value, options)
-  }
-})
-
-const getImageUrl = (src) => {
-  return new URL(`/src/assets/images/${src}`, import.meta.url).href
-}
-
-const styleProps = {
-  '--card-width': props.cardWidth + 'px',
-  '--image-height': props.cardImageHeight + 'px'
-}
-
+  set(value) {
+    emit("update:modelValue", value);
+    emit("change", value, options);
+  },
+});
 </script>
 
 <template>
@@ -75,7 +65,7 @@ const styleProps = {
     <div class="card-image__img">
       <img
         :class="[props.type ? `card-image__img--${props.type}` : '']"
-        :src="getImageUrl(option.image)"
+        :src="`/src/assets/images/${option.image}`"
         alt="image"
       />
     </div>

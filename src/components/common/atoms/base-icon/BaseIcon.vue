@@ -26,10 +26,6 @@ const hasIconSize = (width, height) =>
     width: `${width}px`,
     height: `${height}px`,
   }));
-
-const getIconUrl = (src) => {
-  return new URL(`@/assets/icons/${src}`, import.meta.url).href
-}
 </script>
 
 <template>
@@ -37,7 +33,7 @@ const getIconUrl = (src) => {
     <img
       v-if="src"
       :style="width || height ? hasIconSize(width, height).value : null"
-      :src="getIconUrl(src)"
+      :src="`/src/assets/icons/${src}`"
       alt="icon"
     />
   </div>
