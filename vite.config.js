@@ -29,11 +29,4 @@ export default defineConfig({
       },
     },
   },
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       prependData: `@import "./src/assets/scss/styles.scss";`,
-  //     },
-  //   },
-  // },
 });

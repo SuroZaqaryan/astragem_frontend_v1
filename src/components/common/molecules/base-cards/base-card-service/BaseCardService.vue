@@ -32,8 +32,6 @@ const props = defineProps({
   },
 });
 
-console.log('props', props.options);
-
 const options = ref([...props.options]);
 
 const emit = defineEmits(["update:modelValue", "change"]);
@@ -50,13 +48,14 @@ const model = computed({
 });
 
 const getImageUrl = (src) => {
-  return new URL(`../../assets/images/${src}`, import.meta.url).href
+  return new URL(`/src/assets/images/${src}`, import.meta.url).href
 }
 
 const styleProps = {
   "--card-width": props.cardWidth + "px",
   "--image-height": props.cardImageHeight + "px",
 };
+
 </script>
 
 <template>
@@ -74,9 +73,9 @@ const styleProps = {
     />
 
     <div class="card-image__img">
-       <img
+      <img
         :class="[props.type ? `card-image__img--${props.type}` : '']"
-        :src="require(`@/assets/images/${option.image}`)"
+        :src="getImageUrl(option.image)" 
         alt="image"
       />  
     </div>
