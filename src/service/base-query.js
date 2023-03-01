@@ -1,16 +1,16 @@
-import { useQuery } from 'vue-query';
-import axios from 'axios';
+import { useQuery } from "vue-query";
+import axios from "axios";
 
 export function BaseQuery() {
   return function ({
     endpoint,
-    method = 'get',
-    query = '',
+    method = "get",
+    query = "",
     queryFn,
     data: body,
   }) {
     const axiosOptions = {
-      url: `http://localhost:5000/general-body`,
+      url: "http://localhost:5000/general-body",
       method,
       data: body,
     };
@@ -27,10 +27,10 @@ export function BaseQuery() {
 
 // Examples
 
-/************* POST REQUEST *************/
+/** *********** POST REQUEST *************/
 
 // const { isLoading, data } = BaseQuery()({ endpoint: "frame", method: "post", data: { name: "new frame" } });
 
-/************* GET REQUEST *************/
+/** *********** GET REQUEST *************/
 
 // const { isLoading, data } = BaseQuery()({ endpoint: "frame" });

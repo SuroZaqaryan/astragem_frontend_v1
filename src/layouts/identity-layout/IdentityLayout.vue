@@ -37,7 +37,7 @@ defineProps({
   &-block {
     position: relative;
 
-    // @include flexbox("", "center", "", "column");
+    @include flexbox("", "center", "", "column");
     height: calc(100% - 32px);
   }
 }

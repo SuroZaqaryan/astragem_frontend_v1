@@ -1,5 +1,5 @@
 .base-button {
-  // @include flexbox('center');
+  @include flexbox("center");
   max-width: 122px;
   height: 48px;
   gap: 8px;

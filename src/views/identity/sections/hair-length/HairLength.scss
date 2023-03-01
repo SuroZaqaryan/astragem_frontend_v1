@@ -1,8 +1,8 @@
 .content_options {
-  // @include flexbox('', 'center');
+  @include flexbox("", "center");
 
   &__variants {
-    // @include flexbox('', '', '', 'column');
+    @include flexbox("", "", "", "column");
     margin-right: 16px;
 
     .content_options__item {
@@ -16,11 +16,11 @@
       background: $white;
       border: 1px solid #f2dedf;
       border-radius: 6px;
-      // @include flexbox('center', 'space-between');
+      @include flexbox("center", "space-between");
       @extend .monts_medium_16;
       cursor: pointer;
 
-      input[type='radio'] {
+      input[type="radio"] {
         display: none;
       }
       &:hover {

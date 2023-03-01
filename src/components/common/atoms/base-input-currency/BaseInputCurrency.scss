@@ -49,7 +49,7 @@
     .base-icon {
       width: 100%;
       height: 100%;
-      // @include flexbox('center', 'center');
+      @include flexbox("center", "center");
     }
   }
 }

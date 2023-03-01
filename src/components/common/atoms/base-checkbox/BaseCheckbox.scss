@@ -1,12 +1,12 @@
 .base-checkbox {
   font-size: 14px;
-  // @include flexbox('center');
+  @include flexbox("center");
   gap: 8px;
   user-select: none;
   @extend .monts_reg_14;
   cursor: pointer;
 
-  input[type='checkbox'] {
+  input[type="checkbox"] {
     display: grid;
     place-content: center;
     appearance: none;
@@ -25,7 +25,7 @@
     }
 
     &::before {
-      content: '';
+      content: "";
       width: 10px;
       height: 10px;
       transform: scale(0);

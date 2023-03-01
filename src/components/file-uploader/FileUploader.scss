@@ -9,7 +9,7 @@
 
     .file-upload__upload {
       flex-basis: 216px;
-      // @include flexbox('', 'center', '', 'column');
+      @include flexbox("", "center", "", "column");
       background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='black' stroke-width='1' stroke-dasharray='13' stroke-dashoffset='10' stroke-linecap='round'/%3e%3c/svg%3e");
       background-size: 100% 100%;
       background-repeat: no-repeat;
@@ -27,7 +27,7 @@
         background: transparent;
         transition: 0.2s ease;
 
-        &[data-active='true'] {
+        &[data-active="true"] {
           background: #ffffffcc;
         }
 
@@ -45,7 +45,7 @@
             }
 
             .base-image {
-              // @include flexbox('', 'center');
+              @include flexbox("", "center");
               margin-bottom: 8px;
               pointer-events: none;
             }
@@ -62,7 +62,7 @@
             display: block;
           }
 
-          input[type='file']:not(:focus-visible) {
+          input[type="file"]:not(:focus-visible) {
             position: absolute;
             width: 1px;
             height: 1px;

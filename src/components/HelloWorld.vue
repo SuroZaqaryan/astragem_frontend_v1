@@ -1,8 +1,8 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, defineProps } from 'vue'
 
 defineProps({
-  msg: String,
+  msg: String
 })
 
 const count = ref(0)
@@ -25,6 +25,7 @@ const count = ref(0)
       >create-vue</a
     >, the official Vue + Vite starter
   </p>
+
   <p>
     Install
     <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>

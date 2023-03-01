@@ -33,7 +33,7 @@ const handleChange = () => {
 
 <style scoped lang="scss">
 label {
-  // @include flexbox('center');
+  @include flexbox('center');
   @extend .monts_reg_14;
 }
 </style>

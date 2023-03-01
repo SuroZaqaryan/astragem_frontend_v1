@@ -48,14 +48,14 @@
 
   &__info {
     .card-icon__icon {
-      // @include flexbox('', 'center');
+      @include flexbox("", "center");
       margin: 8px 0 4px 0;
     }
 
     .card-icon__text {
       .card-icon__title {
         text-align: center;
-        font-family: 'Montserrat Medium';
+        font-family: "Montserrat Medium";
         font-size: 15px;
         line-height: 24px;
       }

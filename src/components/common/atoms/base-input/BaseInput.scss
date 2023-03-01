@@ -1,6 +1,6 @@
 .base-input {
   .base-input__text-icon {
-    // @include flexbox('center');
+    @include flexbox("center");
     gap: 8px;
     margin-bottom: 8px;
 

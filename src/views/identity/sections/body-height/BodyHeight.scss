@@ -1,5 +1,5 @@
 .content_options {
-  // @include flexbox('center', 'center');
+  @include flexbox("center", "center");
   gap: 16px;
 
   @include laptops {
@@ -21,7 +21,7 @@
     }
   }
 
-  input[type='radio'] {
+  input[type="radio"] {
     display: none;
   }
 }

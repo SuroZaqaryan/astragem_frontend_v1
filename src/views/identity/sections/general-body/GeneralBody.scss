@@ -1,5 +1,5 @@
 .question {
-  // @include flexbox('center', 'center');
+  @include flexbox("center", "center");
   @extend .monts_medium_20;
   margin-bottom: 40px;
 }
@@ -10,8 +10,10 @@
   @include desktop-large {
     @include grid(repeat(2, 1fr), repeat(2, minmax(150px, 246px)));
   }
+
   @include tablets {
     @include grid(repeat(1, 1fr), repeat(1, minmax(150px, 246px)));
   }
+
   justify-content: center;
 }

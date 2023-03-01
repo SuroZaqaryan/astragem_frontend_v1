@@ -18,7 +18,7 @@ import SideBar from "@/components/sidebar/SideBar.vue";
 
 <style lang="scss" scoped>
 .sidebar-wrapper {
-  // @include flexbox("", "space-between");
+  @include flexbox("", "space-between");
   max-width: 1344px;
   margin: auto;
 }

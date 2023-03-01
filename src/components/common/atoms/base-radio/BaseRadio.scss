@@ -1,5 +1,5 @@
 .base-radio {
-  // @include flexbox('center');
+  @include flexbox("center");
   user-select: none;
 
   i {
