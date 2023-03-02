@@ -5,4 +5,9 @@ export const bodyPartApi = {
     const { data } = await api.get("general-body");
     return data;
   },
+
+  getBodyFrame: async () => {
+    const { data } = await api.get("body-frame");
+    return data;
+  },
 };

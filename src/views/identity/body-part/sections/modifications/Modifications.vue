@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { useSideBar } from "@/stores/sidebar.js";
 import { BaseQuery } from "@/service/base-query.js";
 import ArrowRight from "@/assets/icons/repeat/arrow-right-light.svg";
-import IdentityLayout from "@/layouts/identity-layout/IdentityLayout.vue";
+import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
 import BaseButton from "@/components/common/atoms/base-button/BaseButton.vue";
 import CheckboxGroup from "@/components/common/atoms/base-checkbox-group/BaseCheckboxGroup.vue";
 
@@ -15,7 +15,7 @@ const piercing = ref([]);
 </script>
 
 <template>
-  <identity-layout v-if="!isLoading" title="Body Modifications">
+  <body-part-layout v-if="!isLoading" title="Body Modifications">
     <div class="content_options">
       <h3>Tattoos</h3>
       <CheckboxGroup
@@ -44,7 +44,7 @@ const piercing = ref([]);
         Next
       </base-button>
     </div>
-  </identity-layout>
+  </body-part-layout>
 </template>
 
 <style lang="scss" scoped>

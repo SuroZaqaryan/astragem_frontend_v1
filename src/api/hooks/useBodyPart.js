@@ -17,8 +17,6 @@ export const useBodyPart = () => {
     }
   });
 
-  console.log('ppppppp', );
-
   return {
     pending: computed(
       () => isFetching.value || isLoading.value || isError.value

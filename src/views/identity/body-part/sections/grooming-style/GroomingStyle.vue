@@ -1,7 +1,7 @@
 <script setup>
 import { useSideBar } from "@/stores/sidebar.js";
 import { BaseQuery } from "@/service/base-query.js";
-import IdentityLayout from "@/layouts/identity-layout/IdentityLayout.vue";
+import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
 import BaseCardService from "@/components/common/molecules/base-cards/base-card-service/BaseCardService.vue";
 
 const { nextRoute } = useSideBar();
@@ -9,7 +9,7 @@ const { isLoading, data } = BaseQuery()({ endpoint: "grooming-style" });
 </script>
 
 <template>
-  <identity-layout v-if="!isLoading" title="Find Grooming Style">
+  <body-part-layout v-if="!isLoading" title="Find Grooming Style">
     <div class="content_options">
       <base-card-service
         type="square"
@@ -17,7 +17,7 @@ const { isLoading, data } = BaseQuery()({ endpoint: "grooming-style" });
         @change="(value) => nextRoute('grooming-style', value)"
       />
     </div>
-  </identity-layout>
+  </body-part-layout>
 </template>
 
 <style lang="scss" scoped>

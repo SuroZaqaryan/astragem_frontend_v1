@@ -19,41 +19,25 @@
       "image": "identity-images/general-body/diamond.png"
     },
     {
-      "title": "Equal",
-      "description": "",
-      "value": "equal",
-      "image": "identity-images/general-body/equal.png",
-      "defined": [
-        {
-          "title": "Yes",
-          "description": "Hourglass",
-          "value": "yes",
-          "image": "identity-images/general-body/inverted-triangle.png",
-          "full_bust": [
-            {
-              "title": "Yes",
-              "description": "Round",
-              "value": "Round",
-              "image": "identity-images/general-body/round.png"
-            },
-            {
-              "title": "No",
-              "description": "Rectangle",
-              "value": "No",
-              "image": "identity-images/general-body/equal.png"
-            }
-          ]
-        },
-        {
-          "title": "No",
-          "description": "",
-          "value": false,
-          "image": "identity-images/general-body/diamond.png"
-        }
-      ]
+      "title": "Yes",
+      "description": "Hourglass",
+      "value": "hurglass",
+      "image": "identity-images/general-body/inverted-triangle.png"
+    },
+    {
+      "title": "Yes",
+      "description": "Round",
+      "value": "round",
+      "image": "identity-images/general-body/round.png"
+    },
+    {
+      "title": "No",
+      "description": "Rectangle",
+      "value": "rectangle",
+      "image": "identity-images/general-body/equal.png"
     }
   ],
-  "frame": [
+  "body-frame": [
     {
       "title": "Petite",
       "description": "(delicate frame)",

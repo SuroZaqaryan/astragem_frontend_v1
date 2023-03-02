@@ -1,14 +1,14 @@
 <script setup>
 import { useSideBar } from "@/stores/sidebar.js";
 import { BaseQuery } from "@/service/base-query.js";
-import IdentityLayout from "@/layouts/identity-layout/IdentityLayout.vue";
+import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
 
 const { nextRoute } = useSideBar();
 const { isLoading, data } = BaseQuery()({ endpoint: "hair-length" });
 </script>
 
 <template>
-  <identity-layout v-if="!isLoading" title="Hair Length">
+  <body-part-layout v-if="!isLoading" title="Hair Length">
     <div class="content_options">
       <div class="content_options__variants">
         <div
@@ -39,7 +39,7 @@ const { isLoading, data } = BaseQuery()({ endpoint: "hair-length" });
         />
       </div>
     </div>
-  </identity-layout>
+  </body-part-layout>
 </template>
 
 <style lang="scss" scoped>

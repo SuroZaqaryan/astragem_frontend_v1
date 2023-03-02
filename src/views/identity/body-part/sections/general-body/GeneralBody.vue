@@ -1,47 +1,78 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from "vue";
 import { useBodyPart } from "@/api/hooks/useBodyPart";
+import { useSideBar } from "@/stores/sidebar";
+import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
+import BaseIcon from "@/components/common/atoms/base-icon/BaseIcon.vue";
+import BaseCardService from "@/components/common/molecules/base-cards/base-card-service/BaseCardService.vue";
+
 const { data, pending } = useBodyPart();
-import { useSideBar } from '@/stores/sidebar'
-import IdentityLayout from '@/layouts/identity-layout/IdentityLayout.vue'
-import BaseIcon from '@/components/common/atoms/base-icon/BaseIcon.vue'
-import BaseCardService from '@/components/common/molecules/base-cards/base-card-service/BaseCardService.vue'
-const sidebar = useSideBar()
-const subTitle = ref('Which are is wider ?')
+const sidebar = useSideBar();
+
+const subTitle = ref("Which area is wider ?");
+const newData = ref([]);
+
+watch(pending, (newVal) => {
+  if (!newVal) {
+    newData.value = [
+      // At the initial stage, we do not display objects with "hurglass", "round", "rectangle" values
+      ...data.value.filter(
+        (option) => !["hurglass", "round", "rectangle"].includes(option.value)
+      ),
+      // Adding a new object with a value "equal"
+      {
+        title: "Equal",
+        description: "",
+        value: "equal",
+        image: "identity-images/general-body/equal.png",
+      },
+    ];
+  }
+});
+
+const findObj = (key) => data.value.find((obj) => obj.value === key);
 
 const selectOption = (value, options) => {
-  const { defined, full_bust } = options.value.find(
-    (option) => option.value === value
-  )
-  // If the value is false redirect back
-  if (!value) {
-    return (options.value = data.value)
+  switch (value) {
+    case "equal":
+      options.value = [
+        findObj("hurglass"),
+        {
+          title: "No",
+          value: "no",
+          image: "identity-images/general-body/diamond.png",
+        },
+      ];
+      subTitle.value = "Is your waist defined";
+      break;
+    case "no":
+      options.value = [findObj("round"), findObj("rectangle")];
+      subTitle.value = "Do you have a full bust ?";
+      break;
+    default:
+      sidebar.nextRoute("general-body", value);
+      break;
   }
-  if (defined) {
-    options.value = defined
-    subTitle.value = 'Is your waist defined'
-  } else if (full_bust) {
-    options.value = full_bust
-    subTitle.value = 'Do you have a full bust ?'
-  } else {
-    sidebar.nextRoute('general-body', value)
-  }
-}
+};
 </script>
 
 <template>
-    <identity-layout v-if="!pending" title="Find Your Body">
-      <template #question>
-        <p class="question">
-          {{ subTitle }}
-          <base-icon src="repeat/question-mark.svg" />
-        </p>
-      </template>
+  <body-part-layout v-if="!pending" title="Find Your Body">
+    <template #question>
+      <p class="question">
+        {{ subTitle }}
+        <base-icon src="repeat/question-mark.svg" />
+      </p>
+    </template>
 
-      <div class="content_options">
-        <base-card-service type="square" :options="data" @change="selectOption" />
-      </div>
-    </identity-layout>
+    <div class="content_options">
+      <base-card-service
+        type="square"
+        :options="newData"
+        @change="selectOption"
+      />
+    </div>
+  </body-part-layout>
 </template>
 
 <style lang="scss" scoped>

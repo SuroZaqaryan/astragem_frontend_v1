@@ -1,7 +1,7 @@
 <script setup>
 import { useSideBar } from "@/stores/sidebar.js";
 import { BaseQuery } from "@/service/base-query.js";
-import IdentityLayout from "@/layouts/identity-layout/IdentityLayout.vue";
+import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
 import BaseCardService from "@/components/common/molecules/base-cards/base-card-service/BaseCardService.vue";
 
 const { nextRoute } = useSideBar();
@@ -9,7 +9,7 @@ const { isLoading, data } = BaseQuery()({ endpoint: "frame" });
 </script>
 
 <template>
-  <identity-layout v-if="!isLoading" title="Find Your Frame">
+  <body-part-layout v-if="!isLoading" title="Find Your Frame">
     <div class="content_options">
       <base-card-service
         type="square"
@@ -17,7 +17,7 @@ const { isLoading, data } = BaseQuery()({ endpoint: "frame" });
         @change="(value) => nextRoute('frame', value)"
       />
     </div>
-  </identity-layout>
+  </body-part-layout>
 </template>
 
 <style lang="scss" scoped>

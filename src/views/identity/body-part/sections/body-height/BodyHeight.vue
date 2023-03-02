@@ -1,14 +1,14 @@
 <script setup>
 import { useSideBar } from "@/stores/sidebar.js";
 import { BaseQuery } from "@/service/base-query.js";
-import IdentityLayout from "@/layouts/identity-layout/IdentityLayout.vue";
+import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
 
 const { nextRoute } = useSideBar();
 const { isLoading, data } = BaseQuery()({ endpoint: "body-height" });
 </script>
 
 <template>
-  <identity-layout v-if="!isLoading" title="Find your height">
+  <body-part-layout v-if="!isLoading" title="Find your height">
     <div class="content_options">
       <label v-for="item in data" :key="item.value">
         <input
@@ -22,7 +22,7 @@ const { isLoading, data } = BaseQuery()({ endpoint: "body-height" });
         </div>
       </label>
     </div>
-  </identity-layout>
+  </body-part-layout>
 </template>
 
 <style lang="scss" scoped>
