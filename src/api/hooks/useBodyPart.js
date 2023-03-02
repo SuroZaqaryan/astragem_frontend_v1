@@ -7,7 +7,7 @@ export const useBodyPart = () => {
 
   const { data, isError, isLoading, isStale, isFetching } = useQuery({
     queryKey: ["body-part"],
-    queryFn: bodyPartApi.getGeneralBody,
+    queryFn: bodyPartApi.getAllBodyPart,
     staleTime: 10 * 60 * 60 * 1000,
   });
 

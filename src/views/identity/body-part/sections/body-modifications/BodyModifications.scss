@@ -10,7 +10,7 @@
   height: 48px;
 }
 
-.content_options:nth-child(1) {
+.content--tattoos {
   .checkbox-group-wrapper {
     @include grid($columns: repeat(5, 200px));
 
@@ -28,14 +28,13 @@
 
     @include tablets {
       @include grid($columns: repeat(1, auto));
-
     }
     gap: 16px;
   }
   margin-bottom: 24px;
 }
 
-.content_options:nth-child(2) {
+.content--piercin {
   .checkbox-group-wrapper {
     @include grid($columns: repeat(4, 200px));
 

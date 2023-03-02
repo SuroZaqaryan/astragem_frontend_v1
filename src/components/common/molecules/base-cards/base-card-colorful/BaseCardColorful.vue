@@ -87,7 +87,7 @@ const styleProps = {
       </div>
 
       <div class="card-hair-color__image">
-        <img :src="require(`@/assets/images/${option.image}`)" alt="image" />
+        <img :src="`/src/assets/images/${option.image}`" alt="image" />
       </div>
     </label>
   </div>

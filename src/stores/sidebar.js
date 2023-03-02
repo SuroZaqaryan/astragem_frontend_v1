@@ -57,12 +57,12 @@ export const useSideBar = defineStore("sidebar", {
         },
         {
           title: "Body Enhancements",
-          link: `enhancements`,
+          link: `body-enhancements`,
           icon: "online_courses.svg",
         },
         {
           title: "Body Modifications",
-          link: `modifications`,
+          link: `body-modifications`,
           icon: "saved-products.svg",
         },
         {

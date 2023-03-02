@@ -1,28 +1,32 @@
 <script setup>
 import { useSideBar } from "@/stores/sidebar.js";
-import { BaseQuery } from "@/service/base-query.js";
-import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
 
 const { nextRoute } = useSideBar();
-const { isLoading, data } = BaseQuery()({ endpoint: "body-height" });
+const next = (value) => nextRoute("body-height", value);
+
+defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
 
 <template>
-  <body-part-layout v-if="!isLoading" title="Find your height">
-    <div class="content_options">
-      <label v-for="item in data" :key="item.value">
-        <input
-          type="radio"
-          :value="item.value"
-          @change="(e) => nextRoute('height', e.target.value)"
-        />
+  <h3 class="content__title">Find your height</h3>
+  <div class="content_options">
+    <label v-for="item in data['body-height']" :key="item.value">
+      <input
+        type="radio"
+        :value="item.value"
+        @change="(e) => next(e.target.value)"
+      />
 
-        <div class="card-image__img">
-          <img :src="require(`@/assets/images/${item.image}`)" alt="image" />
-        </div>
-      </label>
-    </div>
-  </body-part-layout>
+      <div class="card-image__img">
+        <img :src="`/src/assets/images/${item.image}`" alt="image" />
+      </div>
+    </label>
+  </div>
 </template>
 
 <style lang="scss" scoped>

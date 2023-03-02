@@ -1,23 +1,28 @@
 <script setup>
 import { useSideBar } from "@/stores/sidebar.js";
-import { BaseQuery } from "@/service/base-query.js";
-import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
 import BaseCardService from "@/components/common/molecules/base-cards/base-card-service/BaseCardService.vue";
 
 const { nextRoute } = useSideBar();
-const { isLoading, data } = BaseQuery()({ endpoint: "hair-type" });
+const next = (value) => nextRoute("hair-type", value);
+
+defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
 
 <template>
-  <body-part-layout v-if="!isLoading" title="Hair Type">
-    <div class="content_options">
-      <base-card-service
-        type="square"
-        :options="data"
-        @change="(value) => nextRoute('hair-type', value)"
-      />
-    </div>
-  </body-part-layout>
+  <h3 class="content__title">Hair Type</h3>
+
+  <div class="content_options">
+    <base-card-service
+      type="square"
+      :options="data['hair-type']"
+      @change="(value) => next(value)"
+    />
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -1,36 +1,37 @@
 <script setup>
-import { ref, watch } from "vue";
-import { useBodyPart } from "@/api/hooks/useBodyPart";
+import { defineProps, ref } from "vue";
 import { useSideBar } from "@/stores/sidebar";
-import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
 import BaseIcon from "@/components/common/atoms/base-icon/BaseIcon.vue";
 import BaseCardService from "@/components/common/molecules/base-cards/base-card-service/BaseCardService.vue";
 
-const { data, pending } = useBodyPart();
 const sidebar = useSideBar();
 
-const subTitle = ref("Which area is wider ?");
-const newData = ref([]);
-
-watch(pending, (newVal) => {
-  if (!newVal) {
-    newData.value = [
-      // At the initial stage, we do not display objects with "hurglass", "round", "rectangle" values
-      ...data.value.filter(
-        (option) => !["hurglass", "round", "rectangle"].includes(option.value)
-      ),
-      // Adding a new object with a value "equal"
-      {
-        title: "Equal",
-        description: "",
-        value: "equal",
-        image: "identity-images/general-body/equal.png",
-      },
-    ];
-  }
+const props = defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
 });
 
-const findObj = (key) => data.value.find((obj) => obj.value === key);
+const newData = ref([]);
+const subTitle = ref("Which area is wider ?");
+
+newData.value = [
+  // At the initial stage, we do not display objects with "hurglass", "round", "rectangle" values
+  ...props.data["general-body"].filter(
+    (option) => !["hurglass", "round", "rectangle"].includes(option.value)
+  ),
+  // Adding a new object with a value "equal"
+  {
+    title: "Equal",
+    description: "",
+    value: "equal",
+    image: "identity-images/general-body/equal.png",
+  },
+];
+
+const findObj = (key) =>
+  props.data["general-body"].find((obj) => obj.value === key);
 
 const selectOption = (value, options) => {
   switch (value) {
@@ -57,13 +58,13 @@ const selectOption = (value, options) => {
 </script>
 
 <template>
-  <body-part-layout v-if="!pending" title="Find Your Body">
-    <template #question>
-      <p class="question">
-        {{ subTitle }}
-        <base-icon src="repeat/question-mark.svg" />
-      </p>
-    </template>
+  <div>
+    <h3 class="content__title">Find Your Body</h3>
+
+    <p class="content__subtitle">
+      {{ subTitle }}
+      <base-icon src="repeat/question-mark.svg" />
+    </p>
 
     <div class="content_options">
       <base-card-service
@@ -72,7 +73,7 @@ const selectOption = (value, options) => {
         @change="selectOption"
       />
     </div>
-  </body-part-layout>
+  </div>
 </template>
 
 <style lang="scss" scoped>

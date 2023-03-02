@@ -1,22 +1,27 @@
 <script setup>
 import { useSideBar } from "@/stores/sidebar.js";
-import { BaseQuery } from "@/service/base-query.js";
-import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
 import BaseCardColorful from "@/components/common/molecules/base-cards/base-card-colorful/BaseCardColorful.vue";
 
 const { nextRoute } = useSideBar();
-const { isLoading, data } = BaseQuery()({ endpoint: "eye-color" });
+const next = (value) => nextRoute("eye-color", value);
+
+defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
 
 <template>
-  <body-part-layout v-if="!isLoading" title="Eye Color">
-    <div class="content_options 1">
-      <base-card-colorful
-        type="square"
-        :options="data"
-        width="133"
-        @change="(value) => nextRoute('eye-color', value)"
-      />
-    </div>
-  </body-part-layout>
+  <h3 class="content__title">Eye Color</h3>
+
+  <div class="content_options 1">
+    <base-card-colorful
+      type="square"
+      :options="data['eye-color']"
+      width="133"
+      @change="(value) => next(value)"
+    />
+  </div>
 </template>

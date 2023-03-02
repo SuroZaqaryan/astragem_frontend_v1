@@ -1,5 +1,9 @@
 <script setup>
 import SideBar from "@/components/sidebar/SideBar.vue";
+import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
+import { useBodyPart } from "@/api/hooks/useBodyPart";
+
+const { data, pending } = useBodyPart();
 </script>
 
 <template>
@@ -10,7 +14,9 @@ import SideBar from "@/components/sidebar/SideBar.vue";
 
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
-        <component :is="Component" />
+        <body-part-layout v-if="!pending">
+          <component :data="data" :is="Component" />
+        </body-part-layout>
       </transition>
     </router-view>
   </div>

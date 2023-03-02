@@ -1,22 +1,27 @@
 <script setup>
 import { useSideBar } from "@/stores/sidebar.js";
-import { BaseQuery } from "@/service/base-query.js";
-import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
 import BaseCardIcon from "@/components/common/molecules/base-cards/base-card-icon/BaseCardIcon.vue";
 
 const { nextRoute } = useSideBar();
-const { isLoading, data } = BaseQuery()({ endpoint: "butt-shape" });
+const next = (value) => nextRoute("butt-shape", value);
+
+defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
 
 <template>
-  <body-part-layout v-if="!isLoading" title="Find Your Butt Shape">
-    <div class="content_options">
-      <base-card-icon
-        :options="data"
-        @change="(value) => nextRoute('butt-shape', value)"
-      />
-    </div>
-  </body-part-layout>
+  <h3 class="content__title">Find Your Butt Shape</h3>
+
+  <div class="content_options">
+    <base-card-icon
+      :options="data['butt-shape']"
+      @change="(value) => next(value)"
+    />
+  </div>
 </template>
 
 <style lang="scss" scoped>

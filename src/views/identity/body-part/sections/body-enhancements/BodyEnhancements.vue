@@ -3,7 +3,7 @@ import { useSideBar } from "@/stores/sidebar.js";
 import BaseCardService from "@/components/common/molecules/base-cards/base-card-service/BaseCardService.vue";
 
 const { nextRoute } = useSideBar();
-const next = (value) => nextRoute("pussy-type", value);
+const next = (value) => nextRoute("body-enhancements", value);
 
 defineProps({
   data: {
@@ -14,16 +14,16 @@ defineProps({
 </script>
 
 <template>
-  <h3 class="content__title">Find Your Pussy Typ</h3>
+  <h3 class="content__title">Body Enhancements</h3>
   <div class="content_options">
     <base-card-service
       type="square"
-      :options="data['pussy-type']"
+      :options="data['body-enhancements']"
       @change="(value) => next(value)"
     />
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import "PussyType";
+@import "Enhancements";
 </style>

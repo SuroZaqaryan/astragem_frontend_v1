@@ -1,45 +1,50 @@
 <script setup>
 import { useSideBar } from "@/stores/sidebar.js";
-import { BaseQuery } from "@/service/base-query.js";
-import BodyPartLayout from "@/layouts/body-part-layout/BodyPartLayout.vue";
 
 const { nextRoute } = useSideBar();
-const { isLoading, data } = BaseQuery()({ endpoint: "hair-length" });
+const next = (value) => nextRoute("hair-length", value);
+
+defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
 
 <template>
-  <body-part-layout v-if="!isLoading" title="Hair Length">
-    <div class="content_options">
-      <div class="content_options__variants">
-        <div
-          v-for="(option, idx) in data"
-          :key="idx"
-          class="content_options__item"
-        >
-          <label>
-            <span>{{ option.title }}</span>
-            <span>{{ option.description }}</span>
-            <input
-              :value="option.value"
-              type="radio"
-              @change="(e) => nextRoute('hair-length', e.target.value)"
-            />
-          </label>
-          <img
-            src="@/assets/images/identity-images/hair-length/hair-arrow.svg"
-            alt="hair-arrow"
-          />
-        </div>
-      </div>
+  <h3 class="content__title">Hair Length</h3>
 
-      <div class="content_options__image">
+  <div class="content_options">
+    <div class="content_options__variants">
+      <div
+        v-for="(option, idx) in data['hair-length']"
+        :key="idx"
+        class="content_options__item"
+      >
+        <label>
+          <span>{{ option.title }}</span>
+          <span>{{ option.description }}</span>
+          <input
+            :value="option.value"
+            type="radio"
+            @change="(e) => next(e.target.value)"
+          />
+        </label>
         <img
-          src="@/assets/images/identity-images/hair-length/hair-length.png"
-          alt="hair-length"
+          src="@/assets/images/identity-images/hair-length/hair-arrow.svg"
+          alt="hair-arrow"
         />
       </div>
     </div>
-  </body-part-layout>
+
+    <div class="content_options__image">
+      <img
+        src="@/assets/images/identity-images/hair-length/hair-length.png"
+        alt="hair-length"
+      />
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>

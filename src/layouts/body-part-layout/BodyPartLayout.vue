@@ -38,6 +38,7 @@ defineProps({
     position: relative;
     @include flexbox("", "center", "", "column");
     height: calc(100% - 32px);
+    padding-top: 4rem;
   }
 }
 
@@ -45,5 +46,22 @@ defineProps({
   pointer-events: none;
   opacity: 0.4;
   user-select: none;
+}
+</style>
+
+<style lang="scss">
+.sidebar__content {
+  .content__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    @extend .monts_semibold_24;
+
+    @include desktop-large {
+      margin-bottom: 1rem;
+    }
+  }
 }
 </style>

@@ -31,11 +31,7 @@ const model = computed({
 </script>
 
 <template>
-  <label
-    v-for="option in options"
-    :key="option.value"
-    class="card-icon"
-  >
+  <label v-for="option in options" :key="option.value" class="card-icon">
     <input
       :id="option.value"
       v-model="model"
@@ -44,7 +40,7 @@ const model = computed({
     />
 
     <div v-if="option.image" class="card-icon__img">
-      <img :src="require(`@/assets/images/${option.image}`)" alt="image" />
+      <img :src="`/src/assets/images/${option.image}`" alt="image" />
     </div>
 
     <div class="card-icon__info">
@@ -52,7 +48,7 @@ const model = computed({
         <img
           width="32"
           height="32"
-          :src="require(`@/assets/images/${option.icon}`)"
+          :src="`/src/assets/images/${option.icon}`"
           alt="icon"
         />
       </div>
