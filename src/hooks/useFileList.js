@@ -1,4 +1,4 @@
-import { usePinCodeStore } from "@/stores/file-upload";
+import { usePinCodeStore } from "@/stores/file-upload.js";
 const pinCode = usePinCodeStore();
 
 export default function () {

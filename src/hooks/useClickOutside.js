@@ -1,5 +1,5 @@
 // Outside click event
-const clickOutside = {
+const useClickOutside = {
   beforeMount: (el, binding) => {
     el.clickOutsideEvent = (event) => {
       if (!(el == event.target || el.contains(event.target))) {
@@ -30,4 +30,4 @@ const clickOutside = {
   },
 };
 
-export default clickOutside;
+export default useClickOutside;

@@ -2,7 +2,7 @@
 import { usePinCodeStore } from "@/stores/file-upload.js";
 
 // File Management
-import useFileList from "@/helpers/composition-file-uploader/file-list";
+import useFileList from "@/hooks/useFileList.js";
 
 // Pin Code
 import PinForm from "@/components/file-uploader/file-forms/pin-code/pin-form/PinForm.vue";
