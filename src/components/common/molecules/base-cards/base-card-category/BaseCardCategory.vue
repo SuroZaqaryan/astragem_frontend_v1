@@ -51,7 +51,7 @@ const model = computed({
         <img
           width="24"
           height="24"
-          :src="require(`@/assets/images/base-cards-images/${option.icon}`)"
+          :src="`/src/assets/images/base-cards-images/${option.icon}`"
           class="card-category__info-indicator"
           alt="image"
         />

@@ -1,18 +1,18 @@
 <script setup>
-import { usePinCodeStore } from "@/stores/file-upload";
+import { usePinCodeStore } from "@/stores/file-upload.js";
 
 // File Management
 import useFileList from "@/helpers/composition-file-uploader/file-list";
 
 // Pin Code
-import PinForm from "./file-forms/pin-code/pin-form/PinForm.vue";
-import DropZone from "./file-forms/pin-code/drop-zone/DropZone.vue";
-import FilePreview from "./file-forms/FilePreview.vue";
+import PinForm from "@/components/file-uploader/file-forms/pin-code/pin-form/PinForm.vue";
+import DropZone from "@/components/file-uploader/file-forms/pin-code/drop-zone/DropZone.vue";
+import FilePreview from "@/components/file-uploader/file-forms/FilePreview.vue";
 
 // Currency
-import CurrencyForm from "./file-forms/currency/CurrencyForm.vue";
+import CurrencyForm from "@/components/file-uploader/file-forms/currency/CurrencyForm.vue";
 
-import BaseButton from "@/components/common/atoms/base-button/BaseButton";
+import BaseButton from "@/components/common/atoms/base-button/BaseButton.vue";
 import BaseImage from "@/components/common/atoms/base-image/BaseImage.vue";
 
 const pinCode = usePinCodeStore();
@@ -29,7 +29,6 @@ const props = defineProps({
 
 function onInputFileChange(e) {
   addFiles(e.target.files);
-
   // Reset so that selecting the same file again will still cause it to fire this change
   e.target.value = null;
 }

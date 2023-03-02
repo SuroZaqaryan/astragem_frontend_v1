@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({
+defineProps({
   src: {
     type: String,
     require: true,
@@ -38,7 +38,7 @@ const props = defineProps({
       v-if="src"
       :width="width"
       :height="height"
-      :src="local ? require(`@/assets/images/${src}`) : src"
+      :src="local ? `/src/assets/images/${src}` : src"
       :alt="alt ? alt : src"
       :class="{ 'base-image-blur': blur }"
     />

@@ -1347,7 +1347,7 @@ const BaseCardCategoryList = ref([
 
             <div>
               <!-- type = private or free -->
-              <file-uploader type="free" />
+               <file-uploader type="free" />
             </div>
           </div>
         </div>

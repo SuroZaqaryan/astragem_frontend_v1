@@ -4,8 +4,8 @@ import VOtpInput from "vue3-otp-input";
 import BaseButton from "@/components/common/atoms/base-button/BaseButton";
 
 import { usePinCodeStore } from "@/stores/file-upload";
-const pinCode = usePinCodeStore();
 
+const pinCode = usePinCodeStore();
 const props = defineProps({
   file: { type: Object, required: true }, // current file
 });
@@ -65,14 +65,17 @@ const props = defineProps({
   border: 1px solid rgba(0, 0, 0, 0.3);
   text-align: center;
 }
+
 .otp-input::placeholder {
   font-size: 20px;
 }
+
 .otp-input::-webkit-inner-spin-button,
 .otp-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 input::placeholder {
   font-size: 15px;
   text-align: center;
