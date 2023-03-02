@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 import { useSideBar } from "@/stores/sidebar";
 import BaseIcon from "@/components/common/atoms/base-icon/BaseIcon.vue";
 import BaseCardService from "@/components/common/molecules/base-cards/base-card-service/BaseCardService.vue";

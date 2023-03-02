@@ -2,14 +2,14 @@
 import { ref } from "vue";
 
 import BaseIcon from "@/components/common/atoms/base-icon/BaseIcon.vue";
-import BaseButton from "@/components/common/atoms/base-button/BaseButton";
 import BaseInput from "@/components/common/atoms/base-input/BaseInput.vue";
+import BaseButton from "@/components/common/atoms/base-button/BaseButton.vue";
 import BaseSwitch from "@/components/common/atoms/base-switch/BaseSwitch.vue";
-import BaseDropdown from "@/components/common/atoms/base-dropdown/BaseDropdown";
+import BaseDropdown from "@/components/common/atoms/base-dropdown/BaseDropdown.vue";
 import BaseCheckbox from "@/components/common/atoms/base-checkbox/BaseCheckbox.vue";
 import BaseCollapse from "@/components/common/atoms/base-collapse/BaseCollapse.vue";
-import BaseCardIcon from "@/components/common/molecules/base-cards/base-card-icon/BaseCardIcon.vue";
 import BaseRadioButtonGroup from "@/components/common/atoms/base-radio/BaseRadioButtonGroup.vue";
+import BaseCardIcon from "@/components/common/molecules/base-cards/base-card-icon/BaseCardIcon.vue";
 import BaseInputCurrency from "@/components/common/atoms/base-input-currency/BaseInputCurrency.vue";
 import BaseCardService from "@/components/common/molecules/base-cards/base-card-service/BaseCardService.vue";
 import BaseCardCategory from "@/components/common/molecules/base-cards/base-card-category/BaseCardCategory.vue";
@@ -38,7 +38,7 @@ const switch3Change = () => {
   console.log("switch3 value", switch1.value);
 };
 
-// ******************* Checkbox values *********************
+// ******************** Checkbox values **********************
 
 const checkbox1 = ref(false);
 const checkbox2 = ref(false);
@@ -441,7 +441,7 @@ const baseRadioGroupList = ref([
         <div class="btn-group-section">
           <div class="btn-box">
             <div class="box">
-              <base-button> Send</base-button>
+              <base-button> Send </base-button>
 
               <p>Default button</p>
             </div>

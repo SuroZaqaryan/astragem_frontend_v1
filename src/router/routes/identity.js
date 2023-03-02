@@ -1,4 +1,4 @@
-export const bodyPart = [
+export const identity = [
   {
     path: "/identity",
     name: "identity",
@@ -17,7 +17,7 @@ export const bodyPart = [
         name: "GeneralBody",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/general-body/GeneralBody.vue"
+            /* webpackChunkName: "GeneralBody" */ "@/views/identity/body-part/sections/general-body/GeneralBody.vue"
           ),
       },
       {
@@ -25,7 +25,7 @@ export const bodyPart = [
         name: "BodyFrame",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/body-frame/BodyFrame.vue"
+            /* webpackChunkName: "BodyFrame" */ "@/views/identity/body-part/sections/body-frame/BodyFrame.vue"
           ),
       },
       {
@@ -33,7 +33,7 @@ export const bodyPart = [
         name: "BodyHeight",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/body-height/BodyHeight.vue"
+            /* webpackChunkName: "BodyHeight" */ "@/views/identity/body-part/sections/body-height/BodyHeight.vue"
           ),
       },
       {
@@ -41,7 +41,7 @@ export const bodyPart = [
         name: "BreastShape",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/breast-shape/BreastShape.vue"
+            /* webpackChunkName: "BreastShape" */ "@/views/identity/body-part/sections/breast-shape/BreastShape.vue"
           ),
       },
       {
@@ -49,7 +49,7 @@ export const bodyPart = [
         name: "BreastSize",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/breast-size/BreastSize.vue"
+            /* webpackChunkName: "BreastSize" */ "@/views/identity/body-part/sections/breast-size/BreastSize.vue"
           ),
       },
       {
@@ -57,7 +57,7 @@ export const bodyPart = [
         name: "NippieVariation",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/nippie-variation/NippieVariation.vue"
+            /* webpackChunkName: "NippieVariation" */ "@/views/identity/body-part/sections/nippie-variation/NippieVariation.vue"
           ),
       },
       {
@@ -65,7 +65,7 @@ export const bodyPart = [
         name: "ButtShape",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/butt-shape/ButtShape.vue"
+            /* webpackChunkName: "ButtShape" */ "@/views/identity/body-part/sections/butt-shape/ButtShape.vue"
           ),
       },
       {
@@ -73,7 +73,7 @@ export const bodyPart = [
         name: "PussyType",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/pussy-type/PussyType.vue"
+            /* webpackChunkName: "PussyType" */ "@/views/identity/body-part/sections/pussy-type/PussyType.vue"
           ),
       },
       {
@@ -81,7 +81,7 @@ export const bodyPart = [
         name: "GroomingStyle",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/grooming-style/GroomingStyle.vue"
+            /* webpackChunkName: "GroomingStyle" */ "@/views/identity/body-part/sections/grooming-style/GroomingStyle.vue"
           ),
       },
       {
@@ -89,7 +89,7 @@ export const bodyPart = [
         name: "BodyEnhancements",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/body-enhancements/BodyEnhancements.vue"
+            /* webpackChunkName: "BodyEnhancements" */ "@/views/identity/body-part/sections/body-enhancements/BodyEnhancements.vue"
           ),
       },
       {
@@ -97,7 +97,7 @@ export const bodyPart = [
         name: "Modifications",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/body-modifications/BodyModifications.vue"
+            /* webpackChunkName: "Modifications" */ "@/views/identity/body-part/sections/body-modifications/BodyModifications.vue"
           ),
       },
       {
@@ -105,34 +105,33 @@ export const bodyPart = [
         name: "HairLength",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/hair-length/HairLength.vue"
+            /* webpackChunkName: "HairLength" */ "@/views/identity/body-part/sections/hair-length/HairLength.vue"
           ),
       },
       {
         path: "hair-type",
         name: "HairType",
         component: () =>
-          import("@/views/identity/body-part/sections/hair-type/HairType.vue"),
+          import(
+            /* webpackChunkName: "HairType" */ "@/views/identity/body-part/sections/hair-type/HairType.vue"
+          ),
       },
       {
         path: "hair-color",
         name: "HairColor",
         component: () =>
           import(
-            "@/views/identity/body-part/sections/hair-color/HairColor.vue"
+            /* webpackChunkName: "HairColor" */ "@/views/identity/body-part/sections/hair-color/HairColor.vue"
           ),
       },
       {
         path: "eye-color",
         name: "EyeColor",
         component: () =>
-          import("@/views/identity/body-part/sections/eye-color/EyeColor.vue"),
+          import(
+            /* webpackChunkName: "EyeColor" */ "@/views/identity/body-part/sections/eye-color/EyeColor.vue"
+          ),
       },
-      // {
-      //   path: ":pathMatch(.*)*",
-      //   name: "not-found",
-      //   redirect: "/general-body",
-      // },
     ],
   },
 ];
