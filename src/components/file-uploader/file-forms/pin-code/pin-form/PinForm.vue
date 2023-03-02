@@ -1,11 +1,12 @@
 <script setup>
 import VOtpInput from "vue3-otp-input";
 
-import BaseButton from "@/components/common/atoms/base-button/BaseButton";
+import BaseButton from "@/components/common/atoms/base-button/BaseButton.vue";
 
 import { usePinCodeStore } from "@/stores/file-upload";
 
 const pinCode = usePinCodeStore();
+
 const props = defineProps({
   file: { type: Object, required: true }, // current file
 });
@@ -52,7 +53,6 @@ const props = defineProps({
 <!-- Input pin code styles -->
 <style lang="scss">
 @import "./PinForm.scss";
-@import "@/assets/scss/_typography";
 </style>
 
 <!-- Input pin code styles -->
