@@ -4,11 +4,13 @@
 
   &__other-row,
   &__first-row {
-    @include grid(
-      null,
-      repeat(auto-fit, minmax(100px, 193px)),
-      $gap: 16px,
-      $justify-content: center
-    );
+    form {
+      @include grid(
+        null,
+        repeat(auto-fit, minmax(100px, 193px)),
+        $gap: 16px,
+        $justify-content: center
+      );
+    }
   }
 }

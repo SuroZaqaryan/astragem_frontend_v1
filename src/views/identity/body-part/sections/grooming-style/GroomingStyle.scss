@@ -1,17 +1,19 @@
 .content_options {
-  @include grid(null, repeat(6, minmax(100px, 193px)), $gap: 16px);
+  form {
+    @include grid(null, repeat(6, minmax(100px, 193px)), $gap: 16px);
 
-  @include desktop-large {
-    @include grid(repeat(2, 1fr), repeat(3, minmax(100px, 193px)));
+    @include desktop-large {
+      @include grid(repeat(2, 1fr), repeat(3, minmax(100px, 193px)));
+    }
+
+    @include laptops {
+      @include grid(repeat(1, 1fr), repeat(2, minmax(100px, 193px)));
+    }
+
+    @include tablets {
+      @include grid(repeat(1, 1fr), repeat(1, minmax(100px, 193px)));
+    }
+
+    justify-content: center;
   }
-
-  @include laptops {
-    @include grid(repeat(1, 1fr), repeat(2, minmax(100px, 193px)));
-  }
-
-  @include tablets {
-    @include grid(repeat(1, 1fr), repeat(1, minmax(100px, 193px)));
-  }
-
-  justify-content: center;
 }

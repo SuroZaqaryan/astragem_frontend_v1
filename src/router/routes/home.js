@@ -3,6 +3,6 @@ export const home = [
     path: "/",
     name: "home",
     component: () =>
-      import(/* webpackChunkName: "Home" */ "@/views/home/Home.vue"),
+      import(/* webpackChunkName: "Home" */ "@/views/home/HomePage.vue"),
   },
 ];

@@ -14,7 +14,7 @@ defineProps({
 
 <template>
   <h3 class="content__title">Find your height</h3>
-  <div class="content_options">
+  <form class="content_options">
     <label v-for="item in data['body-height']" :key="item.value">
       <input
         type="radio"
@@ -26,7 +26,7 @@ defineProps({
         <img :src="`/src/assets/images/${item.image}`" alt="image" />
       </div>
     </label>
-  </div>
+  </form>
 </template>
 
 <style lang="scss" scoped>

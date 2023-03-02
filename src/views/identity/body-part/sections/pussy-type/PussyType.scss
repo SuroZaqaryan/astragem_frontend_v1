@@ -1,4 +1,6 @@
 .content_options {
-  @include flexbox("center", "center", "wrap");
-  gap: 16px;
+  form {
+    @include flexbox("center", "center", "wrap");
+    gap: 16px;
+  }
 }

@@ -109,7 +109,7 @@ export const useSideBar = defineStore("sidebar", {
         // When the user selects all options
         // We successfully send the selected options to the server.
         const res = await axios.post(
-          "http://localhost:5000/posts",
+          "http://localhost:5000/send-body",
           this.sideBarItemsValues
         );
 

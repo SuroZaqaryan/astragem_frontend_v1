@@ -1,14 +1,16 @@
 .content_options {
-  @include grid(repeat(1, 1fr), repeat(4, minmax(100px, 184px)));
+  form {
+    @include grid(repeat(1, 1fr), repeat(4, minmax(100px, 184px)));
 
-  @include desktop-large {
-    @include grid(repeat(1, 1fr), repeat(2, minmax(100px, 184px)));
+    @include desktop-large {
+      @include grid(repeat(1, 1fr), repeat(2, minmax(100px, 184px)));
+    }
+
+    @include laptops {
+      @include grid(repeat(1, 1fr), repeat(1, minmax(100px, 184px)));
+    }
+
+    justify-content: center;
+    gap: 16px;
   }
-
-  @include laptops {
-    @include grid(repeat(1, 1fr), repeat(1, minmax(100px, 184px)));
-  }
-
-  justify-content: center;
-  gap: 16px;
 }

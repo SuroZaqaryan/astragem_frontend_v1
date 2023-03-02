@@ -51,32 +51,34 @@ const model = computed({
 </script>
 
 <template>
-  <label
-    v-for="option in options"
-    :key="option.value"
-    :class="[`card-image--${props.type}`]"
-    class="card-image"
-  >
-    <input
-      :id="option.value"
-      v-model="model"
-      type="radio"
-      :value="option.value"
-    />
-
-    <div class="card-image__img">
-      <img
-        :class="[props.type ? `card-image__img--${props.type}` : '']"
-        :src="`/src/assets/images/${option.image}`"
-        alt="image"
+  <form>
+    <label
+      v-for="option in options"
+      :key="option.value"
+      :class="[`card-image--${props.type}`]"
+      class="card-image"
+    >
+      <input
+        :id="option.value"
+        v-model="model"
+        type="radio"
+        :value="option.value"
       />
-    </div>
 
-    <div class="card-image__text">
-      <h3 class="text__title">{{ option.title }}</h3>
-      <p class="text__description">{{ option.description }}</p>
-    </div>
-  </label>
+      <div class="card-image__img">
+        <img
+          :class="[props.type ? `card-image__img--${props.type}` : '']"
+          :src="`/src/assets/images/${option.image}`"
+          alt="image"
+        />
+      </div>
+
+      <div class="card-image__text">
+        <h3 class="text__title">{{ option.title }}</h3>
+        <p class="text__description">{{ option.description }}</p>
+      </div>
+    </label>
+  </form>
 </template>
 
 <style lang="scss" scoped>

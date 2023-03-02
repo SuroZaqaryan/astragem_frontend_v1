@@ -682,5 +682,77 @@
         "color": "#3E3725"
       }
     ]
-  }
+  },
+  "send-body": [
+    {
+      "general-body": "inverted_triangle",
+      "body-frame": "amazonian",
+      "body-height": "short",
+      "breast-shape": "relaxed",
+      "breast-size": "a",
+      "nippie-variation": "pencill_eraser",
+      "butt-shape": 3,
+      "pussy-type": "peachy",
+      "grooming-style": "postage_stamp",
+      "body-enhancements": "buns",
+      "modifications": {
+        "tattoos": [
+          "hand",
+          "upper_arm"
+        ],
+        "piercing": []
+      },
+      "hair-length": "16",
+      "hair-type": "wavy",
+      "hair-color": "salt_pepper",
+      "eye-color": "brown",
+      "id": 1
+    },
+    {
+      "general-body": "inverted_triangle",
+      "body-frame": "athletic",
+      "body-height": "short",
+      "breast-shape": "side_set",
+      "breast-size": "a",
+      "nippie-variation": "small",
+      "butt-shape": 1,
+      "pussy-type": "peachy",
+      "grooming-style": "heart",
+      "body-enhancements": "buns",
+      "modifications": {
+        "tattoos": [
+          "abdomen",
+          "neck_neck"
+        ],
+        "piercing": []
+      },
+      "hair-length": "16",
+      "hair-type": "wavy",
+      "hair-color": "blonde",
+      "eye-color": "brown",
+      "id": 2
+    },
+    {
+      "general-body": "inverted_triangle",
+      "body-frame": "petite",
+      "body-height": "short",
+      "breast-shape": "athletic",
+      "breast-size": "b",
+      "nippie-variation": "small",
+      "butt-shape": 1,
+      "pussy-type": "peachy",
+      "grooming-style": "postage_stamp",
+      "body-enhancements": "buns",
+      "modifications": {
+        "tattoos": [
+          "ankie"
+        ],
+        "piercing": []
+      },
+      "hair-length": "12",
+      "hair-type": "straight",
+      "hair-color": "black",
+      "id": 3
+    }
+  ]
 }

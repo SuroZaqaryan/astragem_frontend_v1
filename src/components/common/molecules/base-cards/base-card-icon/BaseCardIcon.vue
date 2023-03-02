@@ -31,34 +31,36 @@ const model = computed({
 </script>
 
 <template>
-  <label v-for="option in options" :key="option.value" class="card-icon">
-    <input
-      :id="option.value"
-      v-model="model"
-      type="radio"
-      :value="option.value"
-    />
+  <form>
+    <label v-for="option in options" :key="option.value" class="card-icon">
+      <input
+        :id="option.value"
+        v-model="model"
+        type="radio"
+        :value="option.value"
+      />
 
-    <div v-if="option.image" class="card-icon__img">
-      <img :src="`/src/assets/images/${option.image}`" alt="image" />
-    </div>
-
-    <div class="card-icon__info">
-      <div v-if="option.icon" class="card-icon__icon">
-        <img
-          width="32"
-          height="32"
-          :src="`/src/assets/images/${option.icon}`"
-          alt="icon"
-        />
+      <div v-if="option.image" class="card-icon__img">
+        <img :src="`/src/assets/images/${option.image}`" alt="image" />
       </div>
 
-      <div class="card-icon__text">
-        <h3 class="card-icon__title">{{ option.title }}</h3>
-        <p class="card-icon__description">{{ option.description }}</p>
+      <div class="card-icon__info">
+        <div v-if="option.icon" class="card-icon__icon">
+          <img
+            width="32"
+            height="32"
+            :src="`/src/assets/images/${option.icon}`"
+            alt="icon"
+          />
+        </div>
+
+        <div class="card-icon__text">
+          <h3 class="card-icon__title">{{ option.title }}</h3>
+          <p class="card-icon__description">{{ option.description }}</p>
+        </div>
       </div>
-    </div>
-  </label>
+    </label>
+  </form>
 </template>
 
 <style lang="scss" scoped>
