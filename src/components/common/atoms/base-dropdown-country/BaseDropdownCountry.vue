@@ -15,13 +15,6 @@ const props = defineProps({
 
 const isOpen = ref(false);
 
-const toggleDropdown = () => isOpen.value = !isOpen.value;
-const closeDropdown = () => isOpen.value = false;
-
-const selectedCountry = () => {
-  closeDropdown();
-};
-
 const emit = defineEmits(["update:modelValue", "change"]);
 
 const model = computed({
@@ -30,15 +23,16 @@ const model = computed({
   },
 
   set(value) {
+    isOpen.value = false;
     emit("update:modelValue", value);
   },
 });
 </script>
 
 <template>
-  <div class="select-box" v-click-outside="closeDropdown">
+  <div class="select-box" v-click-outside="() => isOpen = false">
     <div :class="{ active: isOpen }" class="options-container">
-      <label v-for="(option, idx) in options" :key="idx" class="option">
+      <label v-for="option in options" :key="option.name" class="option">
         <input
           type="radio"
           class="radio"
@@ -46,13 +40,12 @@ const model = computed({
           :name="option.name"
           v-model="model"
           :value="option.name"
-          @change="selectedCountry($event)"
         />
         <span :for="option.name">{{ option.name }}</span>
       </label>
     </div>
 
-    <div  @click="toggleDropdown" class="selected">Select Video Category</div>
+    <div  @click="isOpen = !isOpen" class="selected">Select Video Category</div>
   </div>
 </template>
 
