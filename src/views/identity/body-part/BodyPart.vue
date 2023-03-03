@@ -25,7 +25,6 @@ const { data, pending } = useBodyPart();
 <style lang="scss" scoped>
 .sidebar-wrapper {
   @include flexbox("", "space-between");
-  max-width: 1344px;
   margin: auto;
 }
 

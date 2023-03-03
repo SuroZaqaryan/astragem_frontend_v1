@@ -32,8 +32,6 @@ const props = defineProps({
   },
 });
 
-console.log(props);
-
 const options = ref([...props.options]);
 
 const emit = defineEmits(["update:modelValue", "change"]);

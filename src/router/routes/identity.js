@@ -4,7 +4,7 @@ export const identity = [
     name: "identity",
     component: () =>
       import(
-        /* webpackChunkName: "Identity" */ "@/views/identity/body-part/BodyPart.vue"
+        /* webpackChunkName: "Identity" */ "@/views/identity/IdentityPage.vue"
       ),
 
     children: [

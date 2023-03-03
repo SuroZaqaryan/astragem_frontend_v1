@@ -1,0 +1,5 @@
+.user-info {
+  .user-info__form {
+    @include flexbox("center", "space-between");
+  }
+}

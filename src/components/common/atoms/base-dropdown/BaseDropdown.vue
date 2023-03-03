@@ -1,48 +1,7 @@
-<template>
-  <div ref="dropdown" v-click-outside="closeDropdown" class="base-dropdown">
-    <span v-if="label" class="base-dropdown-label" :class="`${mode}`">
-      {{ label }}
-    </span>
-    <div
-      class="base-dropdown-selected"
-      :class="[{ open, disabled }, `${mode}`]"
-      @click="openDropdown"
-    >
-      <slot name="icon-left" />
-      <slot />
-      <!-- <base-icon-svg
-        v-if="selected && selected.icon"
-        :icon-path="selected.icon"
-      /> -->
-      <div class="base-dropdown__selected-item">
-        {{ showActiveHolder }}
-      </div>
-      <span v-if="!selected">
-        {{ placeholder }}
-      </span>
-    </div>
-    <div v-if="error" class="base-dropdown-error">{{ error }}</div>
-    <div
-      v-if="!disabled"
-      class="base-dropdown-items"
-      :class="[{ open }, `${mode}`]"
-      :style="dropdownDirection"
-    >
-      <div
-        v-for="(option, i) of options"
-        :key="`${option.key}_${i}`"
-        @click="select(option)"
-      >
-        <!-- <base-icon-svg v-if="option.icon" :icon-path="option.icon" /> -->
-        {{ option.value }}
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 export default {
   name: "BaseDropdown",
+
   props: {
     options: {
       type: Array,
@@ -85,7 +44,9 @@ export default {
       default: "",
     },
   },
+
   emits: ["update:modelValue"],
+
   setup(props, { emit }) {
     const handleSelect = (val) => {
       emit("update:modelValue", val);
@@ -101,11 +62,13 @@ export default {
       dropdownDirection: "",
     };
   },
+
   computed: {
     selected() {
       let value = this.modelValue;
       return value ? this.options.find((i) => i.key == value) : null;
     },
+
     showActiveHolder() {
       return this.selected && !this.$slots.default
         ? this.selected.value
@@ -142,6 +105,48 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div ref="dropdown" v-click-outside="closeDropdown" class="base-dropdown">
+    <span v-if="label" class="base-dropdown-label" :class="`${mode}`">
+      {{ label }}
+    </span>
+    <div
+      class="base-dropdown-selected"
+      :class="[{ open, disabled }, `${mode}`]"
+      @click="openDropdown"
+    >
+      <slot name="icon-left" />
+      <slot />
+      <!-- <base-icon-svg
+        v-if="selected && selected.icon"
+        :icon-path="selected.icon"
+      /> -->
+      <div class="base-dropdown__selected-item">
+        {{ showActiveHolder }}
+      </div>
+      <span v-if="!selected">
+        {{ placeholder }}
+      </span>
+    </div>
+    <div v-if="error" class="base-dropdown-error">{{ error }}</div>
+    <div
+      v-if="!disabled"
+      class="base-dropdown-items"
+      :class="[{ open }, `${mode}`]"
+      :style="dropdownDirection"
+    >
+      <div
+        v-for="(option, i) of options"
+        :key="`${option.key}_${i}`"
+        @click="select(option)"
+      >
+        <!-- <base-icon-svg v-if="option.icon" :icon-path="option.icon" /> -->
+        {{ option.value }}
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss" scoped>
 @import "./BaseDropdown";
