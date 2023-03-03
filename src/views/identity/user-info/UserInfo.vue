@@ -1,15 +1,14 @@
 <script setup>
 import { ref } from "vue";
-import { useCountriesApi } from "@/api/hooks/useCountriesApi";
 import BaseInput from "@/components/common/atoms/base-input/BaseInput.vue";
-import BaseDropdown from "@/components/common/atoms/base-dropdown/BaseDropdown.vue";
 import InputMark from "@/assets/icons/ui-kit/InputMark.svg";
+import BaseDropdownCountry from "@/components/common/atoms/base-dropdown-country/BaseDropdownCountry.vue";
 
 const userName = ref("");
 const userBirthday = ref("");
 const userNationality = ref("");
 
-const { data, pending } = useCountriesApi();
+const countries = ref([{ name: "USA" }, { name: "China" }, { name: "Russia" }]);
 </script>
 
 <template>
@@ -36,12 +35,8 @@ const { data, pending } = useCountriesApi();
       </div>
 
       <div>
-        <base-dropdown
-          v-if="!pending"
-          v-model="userNationality"
-          :options="data"
-          :placeholder="'Select Item'"
-        />
+        <base-dropdown-country v-model="userNationality" :options="countries" />
+        <h3>{{ userNationality }}</h3>
       </div>
     </form>
   </div>
