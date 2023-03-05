@@ -89,7 +89,7 @@ export default {
       <label v-if="label.length">
         {{ label }}
       </label>
-      <img v-if="icon.length" width="22" height="22" :src="icon" :alt="alt" />
+      <img v-if="icon.length" width="22" height="22" :src="`/src/assets/icons/${icon}`" :alt="alt" />
     </div>
 
     <input

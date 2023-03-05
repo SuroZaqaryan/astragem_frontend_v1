@@ -2,4 +2,14 @@
   .user-info__form {
     @include flexbox("center", "space-between");
   }
+
+  &__country-text {
+    @include flexbox("center");
+    margin-bottom: 6px;
+    gap: 8px;
+
+    p {
+      @extend .monts_semibold_16;
+    }
+  }
 }

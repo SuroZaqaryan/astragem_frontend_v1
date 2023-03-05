@@ -1,19 +1,17 @@
 <script setup>
 import { computed, ref } from "vue";
+import countriesList from "/src/static/countries.json";
+import BaseIcon from "@/components/common/atoms/base-icon/BaseIcon.vue";
 
 const props = defineProps({
-  options: {
-    type: Array,
-    required: true,
-  },
-
   modelValue: {
     type: String,
-    required: false,
+    required: true,
   },
-})
+});
 
 const isOpen = ref(false);
+const countries = ref(countriesList);
 
 const emit = defineEmits(["update:modelValue", "change"]);
 
@@ -30,118 +28,120 @@ const model = computed({
 </script>
 
 <template>
-  <div class="select-box" v-click-outside="() => isOpen = false">
-    <div :class="{ active: isOpen }" class="options-container">
-      <label v-for="option in options" :key="option.name" class="option">
-        <input
-          type="radio"
-          class="radio"
-          :id="option.name"
-          :name="option.name"
-          v-model="model"
-          :value="option.name"
-        />
-        <span :for="option.name">{{ option.name }}</span>
-      </label>
+  <div class="dropdown-country">
+    <div
+      class="dropdown-country__select-box"
+      :class="{ 'dropdown-open': isOpen }"
+      v-click-outside="() => (isOpen = false)"
+    >
+      <div class="dropdown-country__options">
+        <label v-for="country in countries" :key="country.name" class="option">
+          <input
+            type="radio"
+            class="radio"
+            :id="country.name"
+            :name="country.name"
+            v-model="model"
+            :value="country.name"
+          />
+          <span :for="country.name">{{ country.name }}</span>
+        </label>
+      </div>
+
+      <div @click="isOpen = !isOpen" class="dropdown-country__selected">
+        <span>{{ !model.length ? "Select Country" : model }}</span>
+        <base-icon src="repeat/arrow-down.svg" />
+      </div>
     </div>
 
-    <div  @click="isOpen = !isOpen" class="selected">Select Video Category</div>
+    <div class="country__flag">
+      <img
+        width="50"
+        src="https://img.freepik.com/free-vector/illustration-usa-flag_53876-18165.jpg?w=2000&t=st=1677940239~exp=1677940839~hmac=1cf32e46d4d9717a2308322166b29f66bae77d98b8639c0cfd0cf6e93b94e1ae"
+      />
+    </div>
   </div>
 </template>
 
-<style scoped>
-body {
-  background: gray;
-}
-.select-box {
-  position: relative;
-  display: flex;
-  width: 273px;
-  flex-direction: column;
-}
+<style lang="scss" scoped>
+.dropdown-country {
+  @include flexbox("center", "center");
 
-.select-box .options-container {
-  position: absolute;
-  top: 3.5rem;
-  z-index: 1;
-  background: #2f3640;
-  color: #f5f6fa;
-  max-height: 0;
-  width: 100%;
-  opacity: 0;
-  transition: all 0.4s;
-  border-radius: 8px;
-  overflow: hidden;
-  order: 1;
-}
+  &__select-box {
+    position: relative;
+    display: flex;
+    width: 273px;
+    flex-direction: column;
+  }
 
-.selected {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 48px;
-  padding: 12px;
-  background: #2f3640;
-  border-radius: 5px;
-  color: #f5f6fa;
-  order: 0;
-}
+  &__select-box &__options {
+    position: absolute;
+    top: 3.5rem;
+    z-index: 1;
+    background: #fafafa;
+    border: 1px solid rgba(216, 216, 216, 0.5);
+    color: #1c1c1c;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.2s;
+    border-radius: 8px;
+    overflow: hidden;
+    order: 1;
+  }
 
-.selected::after {
-  content: "";
-  background: url("https://img.icons8.com/material-outlined/1x/long-arrow-up.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  z-index: 1;
-  height: 100%;
-  width: 32px;
-  right: 10px;
-  top: 5px;
-  transition: all 0.4s;
-}
+  .dropdown-open &__selected .base-icon {
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+  }
 
-.select-box .options-container.active {
-  max-height: 240px;
-  opacity: 1;
-  overflow-y: scroll;
-}
+  &__selected {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @extend .monts_reg_16;
+    line-height: 0;
+    min-height: 48px;
+    padding: 12px;
+    background: #fafafa;
+    border: 1px solid rgba(216, 216, 216, 0.5);
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+    color: #232323;
+    order: 0;
+  }
 
-.select-box .options-container.active + .selected::after {
-  transform: rotateX(180deg);
-  top: -6px;
-}
+  .dropdown-open &__options {
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+  }
 
-.select-box .options-container::-webkit-scrollbar {
-  width: 8px;
-  background: #0d141f;
-  border-radius: 0 8px 8px 0;
-}
+  &__select-box &__options::-webkit-scrollbar {
+    width: 8px;
+    background: rgba(0, 0, 0, 0.05);
+  }
 
-.select-box .options-container::-webkit-scrollbar-thumb {
-  background: #525861;
-  border-radius: 5px;
-}
+  &__select-box &__options::-webkit-scrollbar-thumb {
+    background: #5151518a;
+  }
 
-.select-box,
-.selected {
-  cursor: pointer;
-}
+  &__select-box .option .radio {
+    display: none;
+  }
 
-.select-box .option:hover {
-  background: #414b57;
-}
+  &__select-box .option {
+    display: block;
+    padding: 12px;
+    cursor: pointer;
+    @extend .monts_reg_14;
+    transition: 0.2s;
 
-.select-box label {
-  cursor: pointer;
-}
-
-.select-box .option .radio {
-  display: none;
-}
-
-.select-box .option {
-  display: block;
-  padding: 12px;
+    &:hover {
+      background: #f6f6f6;
+    }
+  }
 }
 </style>
