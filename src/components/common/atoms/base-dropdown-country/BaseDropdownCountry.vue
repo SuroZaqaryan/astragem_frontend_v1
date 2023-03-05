@@ -12,8 +12,11 @@ const props = defineProps({
 
 const isOpen = ref(false);
 const countries = ref(countriesList);
+const countryFlag = ref("");
 
 const emit = defineEmits(["update:modelValue", "change"]);
+
+const handleChange = (flag) => (countryFlag.value = flag);
 
 const model = computed({
   get() {
@@ -39,6 +42,7 @@ const model = computed({
           <input
             type="radio"
             class="radio"
+            @change="handleChange(country.flag)"
             :id="country.name"
             :name="country.name"
             v-model="model"
@@ -54,11 +58,8 @@ const model = computed({
       </div>
     </div>
 
-    <div class="country__flag">
-      <img
-        width="50"
-        src="https://img.freepik.com/free-vector/illustration-usa-flag_53876-18165.jpg?w=2000&t=st=1677940239~exp=1677940839~hmac=1cf32e46d4d9717a2308322166b29f66bae77d98b8639c0cfd0cf6e93b94e1ae"
-      />
+    <div class="dropdown-country__flag-box">
+      <img width="24" height="24" :src="countryFlag" />
     </div>
   </div>
 </template>
@@ -89,7 +90,6 @@ const model = computed({
     overflow: hidden;
     order: 1;
   }
-
   .dropdown-open &__selected .base-icon {
     transform: rotateX(180deg);
     -webkit-transform: rotateX(180deg);
@@ -127,11 +127,9 @@ const model = computed({
   &__select-box &__options::-webkit-scrollbar-thumb {
     background: #5151518a;
   }
-
   &__select-box .option .radio {
     display: none;
   }
-
   &__select-box .option {
     display: block;
     padding: 12px;
@@ -141,6 +139,13 @@ const model = computed({
 
     &:hover {
       background: #f6f6f6;
+    }
+  }
+
+  &__flag-box {
+    height: auto;
+    img {
+      height: 100%;
     }
   }
 }
